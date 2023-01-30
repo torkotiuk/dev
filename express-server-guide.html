@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express web-server guide</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">&#8678;</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/empty-proj-no-bundlers"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <h1>Express web-server guide</h1>
+
+            <ol>
+              <li>Create github clean project & clone to your pc.</li>
+              <li>
+                Initialize your backend in root folder of your project by
+                default <b>npm init -y</b>
+                <div>
+                  Repository, keywords, author, licence, bugs, homepage - we may
+                  delete these fields in learning rep.
+                </div>
+              </li>
+              <li>
+                Add script --- <b>"server": "nodemon server.js"</b> --- to
+                package.json for starting backend & create server.js
+              </li>
+              <li>
+                Install main dependencies for backend in root of your project
+                folder by
+                <div><b>npm i express cors dotenv</b></div>
+                and
+                <div><b>npm i nodemon -D</b></div>
+              </li>
+              <li>
+                Add simplest express backend server by
+
+                <div class="codepen-item">
+                  <p
+                    class="codepen"
+                    data-height="300"
+                    data-default-tab="js"
+                    data-slug-hash="zYLLygg"
+                    data-user="imitator"
+                    style="
+                      height: 400px;
+                      box-sizing: border-box;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      border: 2px solid;
+                      margin: 1em 0;
+                      padding: 1em;
+                      font-size: 22px;
+                    "
+                  >
+                    <span
+                      >See the Pen
+                      <a href="https://codepen.io/imitator/pen/zYLLygg">
+                        1-simplest Express web-server</a
+                      >
+                      by Andrii (<a href="https://codepen.io/imitator"
+                        >@imitator</a
+                      >) on <a href="https://codepen.io">CodePen</a>.</span
+                    >
+                  </p>
+                  <script
+                    async
+                    src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                  ></script>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
