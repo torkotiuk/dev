@@ -16,7 +16,7 @@
           <a
             class="github-link"
             target="_blank"
-            href="https://github.com/torkotiuk/empty-proj-no-bundlers"
+            href="https://github.com/torkotiuk/dev"
           >
             <svg width="20" height="20">
               <use href="./assets/images/sprite.svg#icon-github"></use>
@@ -54,29 +54,72 @@
               <li>
                 Add simplest express backend server by
 
-                <div class="codepen-item">
+                <p
+                  class="codepen"
+                  data-height="410"
+                  data-default-tab="js"
+                  data-slug-hash="zYLLygg"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                    font-size: 22px;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/zYLLygg">
+                      1-simplest Express web-server</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+            </ol>
+
+            <p style="color: red">
+              Next steps will work with local db file without real db.
+            </p>
+
+            <ol start="6">
+              <li>
+                Create simplest local proj db in """data/products.js""" & import
+                this db to server.js
+                <ul>
+                  <li>data/products.js</li>
                   <p
                     class="codepen"
-                    data-height="300"
+                    data-height="260"
                     data-default-tab="js"
-                    data-slug-hash="zYLLygg"
+                    data-slug-hash="qByyvVK"
                     data-user="imitator"
                     style="
-                      height: 400px;
+                      height: 300px;
                       box-sizing: border-box;
                       display: flex;
                       align-items: center;
                       justify-content: center;
-                      border: 2px solid;
+                      border: 2px solid green;
                       margin: 1em 0;
                       padding: 1em;
-                      font-size: 22px;
                     "
                   >
                     <span
                       >See the Pen
-                      <a href="https://codepen.io/imitator/pen/zYLLygg">
-                        1-simplest Express web-server</a
+                      <a href="https://codepen.io/imitator/pen/qByyvVK">
+                        2-local-db-file</a
                       >
                       by Andrii (<a href="https://codepen.io/imitator"
                         >@imitator</a
@@ -87,7 +130,172 @@
                     async
                     src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                   ></script>
-                </div>
+                  <li>
+                    in our <span style="color: green">server.js</span> file.
+                    Import this db by
+                    <div class="code">
+                      const products = require('./data/products');
+                    </div>
+                    <div>then make simplest root for giving that data by</div>
+                    <div class="code">
+                      app.get('/products', (req, res) => {
+                      <div>
+                        <ul style="list-style-type: none">
+                          <li>res.json(products);</li>
+                        </ul>
+                      </div>
+                      });
+                    </div>
+                  </li>
+                  <li>
+                    In html create script for getting data
+                    <div class="code">
+                      &lt;script&gt;
+                      <ul style="list-style-type: none">
+                        <li>
+                          const productsRequest = fetch(
+                          'http://localhost:5555/products', );
+
+                          <div>
+                            productsRequest
+                            <ul style="list-style-type: none">
+                              <li>
+                                .then(response => {
+                                <div>
+                                  <ul style="list-style-type: none">
+                                    <li>
+                                      if (!response.ok) {
+                                      <ul style="list-style-type: none">
+                                        <li>
+                                          throw new Error('Request error');
+                                        </li>
+                                      </ul>
+                                      }
+                                      <div>return response.json();</div>
+                                      })
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div>.then(result => console.log(result))</div>
+                                <div>.catch(error => console.log(error));</div>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      &lt;/script&gt;
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li style="padding-top: 10px">
+                Create -- routes -- folder in our proj for separating routes
+                from main server.js
+                <ul>
+                  <li>
+                    Create file
+                    <span style="color: green">routes/products.js</span> for
+                    making routes for products endpoint
+                  </li>
+                  <li>
+                    In routes/products.js create list of products routes by
+                    Router() from express
+                    <ul>
+                      <li>
+                        const express = require('express');
+                        <div>const router = express.Router();</div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Move importing data from server.js to data/products.js
+                    <ul>
+                      <li>const products = require('../data/products');</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Move products route from server.js
+                    <ul>
+                      <li style="color: #7a7a7a">
+                        app.get('/products', (req, res) => { res.json(products);
+                        });
+                      </li>
+                    </ul>
+                    to <span style="color: green">routes/products.js</span>
+                    <ul>
+                      <li>
+                        router.get('/', (req, res) => { res.json(products); });
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                To sum up our routes/products.js will be
+                <p
+                  class="codepen"
+                  data-height="270"
+                  data-default-tab="js"
+                  data-slug-hash="mdjvxaB"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/mdjvxaB">
+                      3-routes/products.js</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                <ul>
+                  <li>
+                    In future we will have more routes, so we should group them
+                    in some kind of
+                    <span style="color: green">routes/index.js</span> where we
+                    reexport products
+                    <ul>
+                      <li>
+                        <div>const products = require('./products');</div>
+                        <div>module.exports = { products, };</div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Then import routes in
+                    <span style="color: green">server.js</span>
+                    <ul class="code">
+                      <li>const routes = require('./routes');</li>
+                    </ul>
+                  </li>
+                  <li>
+                    And use routes in server.js by middleware like
+                    <ul class="code">
+                      <li>app.use('/products', routes.products);</li>
+                    </ul>
+                  </li>
+                  <li>
+                    sometimes we should change api for new clients, but for old
+                    clients we have to live old api, so write in server.js such
+                    changes like
+                    <ul class="code">
+                      <li>app.use('/api/v1/products', routes.products);</li>
+                    </ul>
+                  </li>
+                </ul>
               </li>
             </ol>
           </div>
