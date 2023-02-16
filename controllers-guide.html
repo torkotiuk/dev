@@ -153,8 +153,52 @@
                       <li>
                         controllers/products/add.js
                         <p>
-                          Firstly for testing what "req.body" we get in console
+                          Firstly for testing what "req.body" is,
+                          <a
+                            target="_blank"
+                            href="https://codepen.io/imitator/pen/VwGYqpx?editors=0010"
+                            >we get it in console</a
+                          >
+                          <span style="display: block"></span>
                         </p>
+                        <p>
+                          For converting body req we should use "express.json()"
+                          middleware. In our example it used for all requests by
+                          setting it in server.js by app.use(express.json());.
+                        </p>
+                        <span style="display: block">
+                          But for optimizing our server we may use it only for
+                          body requests, that's mean in routes/products.js
+                          <ul>
+                            <li>
+                              router.post('/', express.json(), products.add);
+                            </li>
+                          </ul>
+                        </span>
+
+                        <span
+                          style="
+                            display: block;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                          "
+                        >
+                          Before express.json() developers used another
+                          middleware building in node.js, called
+                          <a
+                            target="_blank"
+                            href="https://codepen.io/imitator/pen/WNgbLzb?editors=0010"
+                            >body-parser</a
+                          >
+                          , in server.js we may use it.</span
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="./postman-request.html"
+                          id="anchor-make-request-via-postman"
+                          >Make request via postman</a
+                        >
                       </li>
                     </ul>
                   </li>
