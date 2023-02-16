@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controllers making guide</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span
+            ><a href="./express-server-guide.html#anchor-controller-guide-link"
+              >&#8678;</a
+            ></span
+          >
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <h1>Controllers making guide</h1>
+
+            <ol>
+              <li>
+                getItem by id
+                <ul>
+                  <li>
+                    Case when we get correct id
+                    <ul>
+                      <li>
+                        in route means router.get('/:id', controller.getById);
+                      </li>
+                      <li>
+                        in controller that parameters are in req.params object
+                      </li>
+                      <li>
+                        so in controller f.e. use method find
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="rNZarmX"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/rNZarmX">
+                              5 - get Item by id</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                        <div>
+                          <span style="color: red"
+                            >Remember about id in databases</span
+                          >, ofter set&nbsp; &#818;&nbsp;id, so method find will
+                          be
+                          <div>
+                            const oneProduct = products.find(item => item._id
+                            === id);
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    If we get incorrect id
+                    <ul>
+                      <li>
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="JjaoBwb"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/JjaoBwb">
+                              6 - get Item by Id (check if id incorrect)</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                POST
+                <ul>
+                  <li>
+                    Make route
+                    <ul>
+                      <li>
+                        routes/products.js
+                        <p>router.post('/', products.add);</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Create controller
+                    <ul>
+                      <li>
+                        controllers/products/add.js
+                        <p>
+                          Firstly for testing what "req.body" we get in console
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>

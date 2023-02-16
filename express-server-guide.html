@@ -12,6 +12,7 @@
       <header>
         <div class="container">
           <span><a href="./index.html">&#8678;</a></span>
+          <span><a href="#anchor-controller-guide-link">tmp anchor</a></span>
 
           <a
             class="github-link"
@@ -349,6 +350,89 @@
                         </ul>
                       </li>
                     </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                The next step in making convenient web-server is separating
+                functions/<b>controllers</b> from routes folder by creating
+                controllers folder in main project folder.
+                <ul>
+                  <li>
+                    Create controllers/products folder, so move importing data &
+                    controller from routes/products.js
+                    <ul>
+                      <li>
+                        controllers/products/getAll.js
+                        <p>
+                          const products = require('../../data/products');
+                          <span style="display: block"
+                            >const getAll = (req, res) =>
+                            {res.json(products);};</span
+                          >
+                          module.exports = getAll;
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Reexport functions from controllers folder by making
+                    controller/products/index.js file
+                    <ul>
+                      <li>
+                        controller/products/index.js
+                        <p>
+                          const getAll = require('./getAll');
+                          <span style="display: block"
+                            >module.exports = {getAll };</span
+                          >
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Import all products controllers from controllers/products
+                    folder to controllers/index.js
+                    <ul>
+                      <li>
+                        controllers/index.js
+                        <p>
+                          const products = require('./products');
+                          <span style="display: block"
+                            >module.exports = { products };</span
+                          >
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Import products controllers from controller folder & use
+                    necessary one
+                    <ul>
+                      <li>
+                        routes/products.js
+                        <p>
+                          const express = require('express');
+                          <span style="display: block"
+                            >const router = express.Router();
+                          </span>
+                          <span style="display: block"
+                            >const { products } = require('../controllers');
+                          </span>
+                          <span style="display: block"
+                            >router.get('/', products.getAll);
+                          </span>
+                          module.exports = router;
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      id="anchor-controller-guide-link"
+                      href="./controllers-guide.html"
+                      >Controllers making guide</a
+                    >
                   </li>
                 </ul>
               </li>
