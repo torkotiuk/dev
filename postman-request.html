@@ -35,7 +35,25 @@
             <h1>Guide: How to make request in POSTMAN</h1>
 
             <ol>
-              <li></li>
+              <li>Make request POST</li>
+              <li>
+                take the same route like for getAll, in our example
+                http://localhost:5555/api/v1/products
+              </li>
+              <li>go to "Body" tab & select "raw" option</li>
+              <li>change from 'text' to "JSON" format</li>
+              <li>
+                make necessary object
+                <div>
+                  {
+                  <div>
+                    <div>"name": "Samsung",</div>
+                    <div>"price": 2700</div>
+                  </div>
+                  }
+                </div>
+                <p>Make sure that in POSTMAN keys (name, price) made in ""</p>
+              </li>
             </ol>
           </div>
         </section>
