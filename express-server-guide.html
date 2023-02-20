@@ -13,7 +13,6 @@
         <div class="container">
           <span><a href="./index.html">&#8678;</a></span>
 
-
           <a
             class="github-link"
             target="_blank"
@@ -421,6 +420,24 @@
                           </span>
                           <span style="display: block"
                             >router.get('/', products.getAll);
+                          </span>
+                          module.exports = router;
+                        </p>
+                      </li>
+                      <li>
+                        OR with renaming products to ctrl when importing
+                        controllers
+                        <p style="color: rgb(168, 86, 86)">
+                          const express = require('express');
+                          <span style="display: block"
+                            >const router = express.Router();
+                          </span>
+                          <span style="display: block"
+                            >const { products: <b>ctrl</b> } =
+                            require('../controllers');
+                          </span>
+                          <span style="display: block"
+                            >router.get('/', <b>ctrl</b>.getAll);
                           </span>
                           module.exports = router;
                         </p>
