@@ -1,3 +1,7 @@
+.current {
+  color: tomato;
+}
+
 *,
 *::before,
 *::before {
