@@ -107,6 +107,13 @@
               </li>
             </ol>
 
+            <p>
+              For checking of the server working type in terminal
+              <b>npm run server</b> and look at this on
+              <a href="http://localhost:5555/">http://localhost:5555/</a> (or
+              <a href="http://127.0.0.1:5555/">http://127.0.0.1:5555/</a> )
+            </p>
+
             <p style="color: red">
               Next steps will work with local db file without real db.
             </p>
@@ -242,8 +249,8 @@
                 <ul>
                   <li>
                     Create file
-                    <span style="color: green">routes/products.js</span> for
-                    making routes for products endpoint
+                    <span style="color: green">routes/products.routes.js</span>
+                    for making routes for products endpoint
                   </li>
                   <li>
                     In routes/products.js create list of products routes by
@@ -256,7 +263,8 @@
                     </ul>
                   </li>
                   <li>
-                    Move importing data from server.js to data/products.js
+                    Move importing data from server.js to
+                    routes/products.routes.js
                     <ul>
                       <li>const products = require('../data/products');</li>
                     </ul>
@@ -317,7 +325,9 @@
                     reexport products
                     <ul>
                       <li>
-                        <div>const products = require('./products');</div>
+                        <div>
+                          const products = require('./products.routes');
+                        </div>
                         <div>module.exports = { products, };</div>
                       </li>
                     </ul>
@@ -342,6 +352,15 @@
                     <ul class="code">
                       <li>app.use('/api/v1/products', routes.products);</li>
                     </ul>
+
+                    <p>
+                      For checking our products responding go to
+                      <a
+                        target="_blank"
+                        href="http://localhost:5555/api/v1/products"
+                        >http://localhost:5555/api/v1/products</a
+                      >
+                    </p>
                   </li>
                   <li>
                     Create one more route with empty data
@@ -350,7 +369,7 @@
                         <a
                           target="_blank"
                           href="https://codepen.io/imitator/pen/wvxVPdL?editors=0010"
-                          >routes/customers.js</a
+                          >routes/customers.routes.js</a
                         >
                       </li>
                       <li>
@@ -426,7 +445,7 @@
                     necessary one
                     <ul>
                       <li>
-                        routes/products.js
+                        routes/products.routes.js
                         <p>
                           const express = require('express');
                           <span style="display: block"
