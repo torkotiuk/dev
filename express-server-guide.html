@@ -114,17 +114,16 @@
               <a href="http://127.0.0.1:5555/">http://127.0.0.1:5555/</a> )
             </p>
 
-            <p>
-              Before pushing the initial repository to the github remember about adding
+            <div>
+              Before pushing the initial repository to the github remember about
+              adding
               <b>.gitignore</b> to the project including in the beginning
               <ul>
-                <li>node_modules/
-
-</li>
-<li>.env</li>
-<li>package-lock.json</li>
+                <li>node_modules/</li>
+                <li>.env</li>
+                <li>package-lock.json</li>
               </ul>
-            </p>
+            </div>
 
             <p style="color: red">
               Next steps will work with local db file without real db.
@@ -498,6 +497,156 @@
                       href="./controllers-guide.html"
                       >Controllers making guide</a
                     >
+                  </li>
+                </ul>
+              </li>
+            </ol>
+
+            <ol start="9">
+              <li>
+                Push web-server from local computer to the server, f.e. heroku
+                or
+                <a
+                  target="_blank"
+                  href="https://www.makeuseof.com/heroku-alternatives-free-full-stack-hosting/"
+                  >free from the list
+                </a>
+
+                <p style="font-weight: 700">https://app.cyclic.sh/ example</p>
+                <ul>
+                  <li>
+                    Go to
+                    <a target="_blank" href="https://app.cyclic.sh/"
+                      >https://app.cyclic.sh/</a
+                    >
+                  </li>
+                  <li>Push the button "New App"</li>
+                  <li>
+                    Go from <b>Starter Templates</b> tab to <b>Link Your Own</b>
+                  </li>
+                  <li>
+                    Type the name of your repo in github & choose it, then press
+                    <b>Connect</b> button
+                  </li>
+                  <li>
+                    cyclic.sh link us to <b>github</b> service for asking of
+                    pushing <b>Approve and install</b> button.
+                  </li>
+                  <li>
+                    Add necessary variables, f.e. DB_HOST, SECRET_KEY etc.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+
+            <ol start="10">
+              <li>
+                Make connection to the real database on
+                <a target="_blank" href="mongodb.com">MongoDB</a> service.
+
+                <ul>
+                  <li>
+                    Press <b>New Project</b> button for creating one project for
+                    many databases
+                  </li>
+                  <li>
+                    Push the button <b>Build a Database</b> for creating first
+                    DB
+                  </li>
+                  <li>Choose nearest region & name a cluster</li>
+                  <li>
+                    Go to <b>Database Access</b> tab for creating first user
+                    <ul>
+                      <li>
+                        Name this user & create pass (f.e. login admin, password
+                        admintest)
+                      </li>
+                      <li>
+                        In <b>Built-in Role</b> point choose "Read and write to
+                        any database"
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Go to <b>Network Access</b> tab
+                    <ul>
+                      <li>Add IP Address</li>
+                      <li>
+                        For developing from anywhere, in example of many
+                        developers, choose/press
+                        <b>Allow Access From Anywhere</b> and push Confirm
+                        button
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Back to database tab and go to <b>Cluster</b> link</li>
+                  <li>
+                    Go to <b>Collections</b> tab & Load a Sample Dataset for
+                    learning or push "Add My Own Data" button
+                  </li>
+                  <li>Name database and collection (noun in plural)</li>
+                  <li>
+                    To connect for database we should take a link,
+                    <ul>
+                      <li>back to home page of Atlas (Mongo DB)</li>
+                      <li>Go to the necessary project</li>
+                      <li>Push the <b>Connect</b> button</li>
+                      <li>
+                        Choose <b>Connect your application</b> button, where
+                        copy link
+                      </li>
+                      <li>Change in link: user, password, database</li>
+                      <li>
+                        Database name must be between "mongodb.net/" and
+                        "?retryWrites", like
+                        <b
+                          >..mongodb.net/<span style="color: green"
+                            >mydatabase</span
+                          >?retryWrites..</b
+                        >
+                      </li>
+                      <li>
+                        write this link to .env & name variable like DB_HOST
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    In web-server install mongoose lib for working with mongoDb
+                    service <b>npm i mongoose</b>
+                  </li>
+                  <li>
+                    Add mongoDB connection code
+                    <p
+                      class="codepen"
+                      data-height="350"
+                      data-default-tab="js"
+                      data-slug-hash="mdGjPEg"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/mdGjPEg">
+                          14 - MongoDB connection</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
                   </li>
                 </ul>
               </li>
