@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catching errors guide</title>
+    <title>Schema (for MongoDB) guide</title>
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body style="background-color: rgb(230, 230, 230)">
@@ -43,13 +43,14 @@
             >
               <a href="./express-server-guide.html">Express web-server guide</a>
               <a href="./controllers-guide.html">Controllers making guide</a>
+              <span class="current">MongoDB Schema</span>
               <span
                 ><a href="./ctrl-and-joi.html">Controllers with JOI</a></span
               >
-              <span class="current">Catching errors guide</span>
+              <a href="./errors-guide-web-server.html">Catching errors guide</a>
             </nav>
 
-            <h1>Catching errors guide</h1>
+            <h1>Schema (for MongoDB) guide</h1>
 
             <ul>
               <li
@@ -59,49 +60,47 @@
                   margin-bottom: 10px;
                 "
               >
-                If some controller send error by next(error), we may catch it in
-                app.js (index.js) by next middleware:
-
-                <p
-                  class="codepen"
-                  data-height="280"
-                  data-default-tab="js"
-                  data-slug-hash="eYLaqqW"
-                  data-user="imitator"
-                  style="
-                    height: 300px;
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 2px solid;
-                    margin: 1em 0;
-                    padding: 1em;
-                  "
-                >
-                  <span
-                    >See the Pen
-                    <a href="https://codepen.io/imitator/pen/eYLaqqW">
-                      19 - catch errors middleware (in web-server)</a
+                <p>
+                  We should think about all possibly requires that help to add
+                  to DB good enough data.
+                </p>
+                <ul>
+                  <li>
+                    f.e. for name of goods, users possibly enough will be
+                    <p
+                      class="codepen"
+                      data-height="200"
+                      data-default-tab="js"
+                      data-slug-hash="abagvRz"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
                     >
-                    by Andrii (<a href="https://codepen.io/imitator"
-                      >@imitator</a
-                    >) on <a href="https://codepen.io">CodePen</a>.</span
-                  >
-                </p>
-                <script
-                  async
-                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                ></script>
-                <p>error - fail, that comes from some of a controller.</p>
-                <p>
-                  code - comes with error (error.code), but we make it by
-                  default if the "code" is unexpected, f.e. i0000.
-                </p>
-                <p>
-                  message - comes from controller (error.message) and we made it
-                  by dafault too.
-                </p>
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/abagvRz">
+                          20-A -- NAME -- field in Schema
+                        </a>
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                      <p>Usually for frontend person enough the answer message, but sometime we should change it by</p>
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
