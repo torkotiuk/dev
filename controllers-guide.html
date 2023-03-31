@@ -14,6 +14,12 @@
           <span><a href="./index.html">Home</a></span>
 
           <a
+            target="_blank"
+            href="https://umbraco.com/knowledge-base/http-status-codes/"
+            >http-status-codes</a
+          >
+
+          <a
             class="github-link"
             target="_blank"
             href="https://github.com/torkotiuk/dev"
@@ -40,6 +46,7 @@
               <span
                 ><a href="./ctrl-and-joi.html">Controllers with JOI</a></span
               >
+              <a href="./errors-guide-web-server.html">Catching errors guide</a>
             </nav>
 
             <h1>Controllers making guide</h1>
@@ -164,7 +171,7 @@
                 <b style="background-color: #009d77; color: #fff; padding: 5px"
                   >POST</b
                 >
-                <span
+                <span style="color: red"
                   >(We make it in cash without real db/rewrite in to file)</span
                 >
                 <ul>
@@ -269,6 +276,129 @@
                       async
                       src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                     ></script>
+                  </li>
+                </ul>
+
+                <h4 style="color: green; margin-top: 20px; text-align: center">
+                  Controller POST works with MongoDB
+                </h4>
+                <ul>
+                  <li>
+                    Make the <b>Schema</b> in models/schemas/product.schema.js
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="bGxyQxK"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/bGxyQxK">
+                          17 - Schema (for work with MongoDb)</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    <div>
+                      Remember about reexport from folder in
+                      models/schemas/index.js
+                      <div>
+                        <div>
+                          const productSchema = require('./product.schema');
+                        </div>
+
+                        <div>module.exports = {</div>
+                        <div style="margin-left: 20px">productSchema,</div>
+                        <div>};</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    Use Schema in <b>Model</b> in models/product.model.js
+                    <div style="margin-left: 20px; margin-top: 10px">
+                      <div>const { model } = require('mongoose');</div>
+                      <div>const { productSchema } = require('./schemas');</div>
+                      <div style="margin-top: 10px">
+                        const Product = model('product', productSchema);
+                      </div>
+                      <div style="margin-top: 10px">
+                        module.exports = Product;
+                      </div>
+                    </div>
+                    <p>
+                      Remember about reexport from models folder in
+                      models/index.js
+                    </p>
+                    <div>
+                      const Product = require('./product.model');
+                      <div>module.exports = {</div>
+                      <div style="margin-left: 20px">Product,</div>
+                      };
+                    </div>
+                  </li>
+                  <li>
+                    Refactor ctrl from local file to work with MongoDB
+                    <p
+                      class="codepen"
+                      data-height="440"
+                      data-default-tab="js"
+                      data-slug-hash="NWLVeWe"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/NWLVeWe">
+                          18 - POST ctrl using for MongoDB</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    <p>
+                      Some errors aren't in list of
+                      <a
+                        href="https://umbraco.com/knowledge-base/http-status-codes/"
+                        >http-status-codes</a
+                      >, so we try to handle them in catch(error){}, other
+                      errors we gather in other place by sending them in
+                      <b>next(error)</b>, in app.js(index.js), this will be
+                      explaining in next
+                      <a href="./errors-guide-web-server.html"
+                        >Catching errors guide</a
+                      >
+                    </p>
                   </li>
                 </ul>
               </li>
