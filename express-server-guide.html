@@ -57,10 +57,19 @@
                   Repository, keywords, author, licence, bugs, homepage - we may
                   delete these fields in learning rep.
                 </div>
+                <div>
+                  Copy from any repo
+                  <a
+                    target="_blank"
+                    href="https://github.com/torkotiuk?tab=repositories"
+                    >.prettierrc.json</a
+                  >
+                </div>
               </li>
               <li>
                 Add script --- <b>"server": "nodemon server.js"</b> --- to
                 package.json for starting backend & create server.js
+                <div>(or index.js if you use https://app.cyclic.sh/)</div>
               </li>
               <li>
                 Install main dependencies for backend in root of your project
@@ -111,8 +120,14 @@
             <p>
               For checking of the server working type in terminal
               <b>npm run server</b> and look at this on
-              <a href="http://localhost:5555/">http://localhost:5555/</a> (or
-              <a href="http://127.0.0.1:5555/">http://127.0.0.1:5555/</a> )
+              <a target="_blank" href="http://localhost:5555/"
+                >http://localhost:5555/</a
+              >
+              (or
+              <a target="_blank" href="http://127.0.0.1:5555/"
+                >http://127.0.0.1:5555/</a
+              >
+              )
             </p>
 
             <div>
@@ -134,7 +149,8 @@
               <li>
                 Create simplest local proj db in """data/products.js""" & import
                 this db to server.js
-                <ul>
+                <!--  -->
+                <ol start="100">
                   <li>
                     data/products.js
                     <div>
@@ -253,7 +269,8 @@
                       </li>
                     </ul>
                   </li>
-                </ul>
+                </ol>
+                <!--  -->
               </li>
               <li style="padding-top: 10px">
                 Create -- routes -- folder in our proj for separating routes
@@ -265,8 +282,8 @@
                     for making routes for products endpoint
                   </li>
                   <li>
-                    In routes/products.js create list of products routes by
-                    Router() from express
+                    In routes/products.routes.js create list of products routes
+                    by Router() from express
                     <ul>
                       <li>
                         const express = require('express');
@@ -282,14 +299,16 @@
                     </ul>
                   </li>
                   <li>
-                    Move products route from server.js
+                    Move products route from server.js (if you made 6.101)
                     <ul>
                       <li style="color: #7a7a7a">
                         app.get('/products', (req, res) => { res.json(products);
                         });
                       </li>
                     </ul>
-                    to <span style="color: green">routes/products.js</span>
+                    to
+                    <span style="color: green">routes/products.routes.js</span>
+                    (or only create it if you didn't make 6.101)
                     <ul>
                       <li>
                         router.get('/', (req, res) => { res.json(products); });
@@ -493,6 +512,7 @@
                     </ul>
                   </li>
                   <li>
+                    More controllers do with
                     <a
                       id="anchor-controller-guide-link"
                       href="./controllers-guide.html"
