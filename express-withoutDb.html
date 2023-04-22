@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express - short guide</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home &#8678;</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <span class="current">Express - SHORT GUIDE </span>
+
+            <ol>
+              <li>Create github clean project & clone to your pc.</li>
+              <li>
+                Initialize your backend in root folder of your project by
+                default <b>npm init -y</b>
+                <div>
+                  Repository, keywords, author, licence, bugs, homepage - we may
+                  delete these fields in learning rep.
+                </div>
+                <div>
+                  Copy from any repo
+                  <a
+                    target="_blank"
+                    href="https://github.com/torkotiuk?tab=repositories"
+                    >.prettierrc.json</a
+                  >
+                </div>
+              </li>
+              <li>
+                Add script --- <b>"server": "nodemon server.js"</b> --- to
+                package.json for starting backend & create server.js
+                <div>(or index.js if you use https://app.cyclic.sh/)</div>
+              </li>
+              <li>
+                Install main dependencies for backend in root of your project
+                folder by
+                <div><b>npm i express cors dotenv</b></div>
+                and
+                <div><b>npm i nodemon -D</b></div>
+              </li>
+              <li>
+                Add simplest express backend server by (also add ".env" file in
+                root of project with necessary PORT=XXXX)
+
+                <p
+                  class="codepen"
+                  data-height="410"
+                  data-default-tab="js"
+                  data-slug-hash="zYLLygg"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                    font-size: 22px;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/zYLLygg">
+                      1-simplest Express web-server</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+
+                <p>
+                  For checking of the server working type in terminal
+                  <b>npm run server</b> and look at this on
+                  <a target="_blank" href="http://localhost:5555/"
+                    >http://localhost:5555/</a
+                  >
+                  (or
+                  <a target="_blank" href="http://127.0.0.1:5555/"
+                    >http://127.0.0.1:5555/</a
+                  >
+                  )
+                </p>
+
+                <div>
+                  Before pushing the initial repository to the github remember
+                  about adding
+                  <b>.gitignore</b> to the project including in the beginning
+                  <ul>
+                    <li>node_modules/</li>
+                    <li>.env</li>
+                    <li>package-lock.json</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+
+            <ol start="6">
+              <li style="padding-top: 10px">
+                Create -- routes -- folder in our proj for separating routes
+                from main server.js
+                <ul>
+                  <li>
+                    Create file
+                    <span style="color: green">routes/products.routes.js</span>
+                    for making routes for products endpoint
+                  </li>
+                  <li>
+                    In routes/products.routes.js create list of products routes
+                    by Router() from express
+                    <ul>
+                      <li>
+                        const express = require('express');
+                        <div>const router = express.Router();</div>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>Create GET response router.get('/', () => {})</li>
+                </ul>
+
+                To sum up our routes/products.routes.js will be
+                <p
+                  class="codepen"
+                  data-height="340"
+                  data-default-tab="js"
+                  data-slug-hash="eYPBdpX"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/eYPBdpX">
+                      3-A __ routes/products.routes.js</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                <ul>
+                  <li>
+                    In future we will have more routes (users, customers etc),
+                    so we should group them in some kind of
+                    <span style="color: green">routes/index.js</span> where we
+                    reexport products
+                    <ul>
+                      <li>
+                        <div>
+                          const products = require('./products.routes');
+                        </div>
+                        <div>module.exports = { products, };</div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Then import routes in
+                    <span style="color: green">server.js</span>
+                    <ul class="code">
+                      <li>const routes = require('./routes');</li>
+                    </ul>
+                  </li>
+                  <li>
+                    And use routes in server.js by middleware like
+                    <ul>
+                      <li>app.use('/products', routes.products);</li>
+                    </ul>
+                  </li>
+                  <li>
+                    sometimes we should change api for new clients, but for old
+                    clients we have to live old api, so write in server.js such
+                    changes like
+                    <ul class="code">
+                      <li>app.use('/api/v1/products', routes.products);</li>
+                    </ul>
+
+                    <p>
+                      For checking our products responding go to
+                      <a
+                        target="_blank"
+                        href="http://localhost:5555/api/v1/products"
+                        >http://localhost:5555/api/v1/products</a
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                The next step in making convenient web-server is separating
+                functions/<b>controllers</b> from routes folder by creating
+                controllers folder in main project folder.
+                <ul>
+                  <li>
+                    Create controllers/products folder, so move controller from
+                    routes/products.routes.js
+                    <ul>
+                      <li>
+                        controllers/products/getAll.js
+                        <p style="margin: 0">
+                          <span style="display: block">
+                            <!--  -->
+                            <div style="margin-top: 20px"></div>
+                            const getAll = (req, res) => {
+
+                            <div style="margin-left: 20px">
+                              <div>res.json([</div>
+                              <div style="margin-left: 20px">
+                                <div>{</div>
+                                <div style="margin-left: 20px">
+                                  <div>name: 'IPhone5',</div>
+                                  <div>price: 10000,</div>
+                                </div>
+                                <div>}</div>
+                              </div>
+                              <div>]);</div>
+                            </div>
+                            <div>};</div>
+                            <!--  -->
+                          </span>
+                          module.exports = getAll;
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Reexport functions from controllers folder by making
+                    controller/products/index.js file
+                    <ul>
+                      <li>
+                        controller/products/index.js
+                        <p>
+                          const getAll = require('./getAll');
+                          <span style="display: block"
+                            >module.exports = {getAll };</span
+                          >
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Import all products controllers from controllers/products
+                    folder to controllers/index.js
+                    <ul>
+                      <li>
+                        controllers/index.js
+                        <p>
+                          const products = require('./products');
+                          <span style="display: block"
+                            >module.exports = { products };</span
+                          >
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Import products controllers from controller folder & use
+                    necessary one
+                    <ul>
+                      <li>
+                        routes/products.routes.js
+                        <p>
+                          const express = require('express');
+                          <span style="display: block"
+                            >const router = express.Router();
+                          </span>
+                          <span style="display: block"
+                            >const { products } = require('../controllers');
+                          </span>
+                          <span style="display: block"
+                            >router.get('/', products.getAll);
+                          </span>
+                          module.exports = router;
+                        </p>
+                      </li>
+                      <li>
+                        OR with renaming products to ctrl when importing
+                        controllers
+                        <p style="color: rgb(168, 86, 86)">
+                          const express = require('express');
+                          <span style="display: block"
+                            >const router = express.Router();
+                          </span>
+                          <span style="display: block"
+                            >const { products: <b>ctrl</b> } =
+                            require('../controllers');
+                          </span>
+                          <span style="display: block"
+                            >router.get('/', <b>ctrl</b>.getAll);
+                          </span>
+                          module.exports = router;
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>

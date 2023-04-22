@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB - simplest Schema</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body style="background-color: rgb(230, 230, 230)">
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home &#8678;</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <h1>MongoDB - simplest Schema</h1>
+
+            <ol>
+              <li>
+                <p>
+                  Schema below 👇🏼 is really simplest, b/c it's more like
+                  recommendation, than require fields
+                </p>
+                <p
+                  class="codepen"
+                  data-height="300"
+                  data-default-tab="js"
+                  data-slug-hash="bGxyQxK"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/bGxyQxK">
+                      17 - Schema (for work with MongoDb)</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                <div>
+                  Remember about reexport from folder in models/schemas/index.js
+                  <div>
+                    <div>
+                      const productSchema = require('./product.schema');
+                    </div>
+
+                    <div>module.exports = {</div>
+                    <div style="margin-left: 20px">productSchema,</div>
+                    <div>};</div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                Use Schema in <b>Model</b> in models/product.model.js
+                <div style="margin-left: 20px; margin-top: 10px">
+                  <div>const { model } = require('mongoose');</div>
+                  <div>const { productSchema } = require('./schemas');</div>
+                  <div style="margin-top: 10px">
+                    const Product = model('product', productSchema);
+                  </div>
+                  <div style="margin-top: 10px">module.exports = Product;</div>
+                </div>
+                <p>
+                  Remember about reexport from models folder in models/index.js
+                </p>
+                <div>
+                  const Product = require('./product.model');
+                  <div>module.exports = {</div>
+                  <div style="margin-left: 20px">Product,</div>
+                  };
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>

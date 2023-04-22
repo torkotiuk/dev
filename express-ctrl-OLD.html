@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controllers with JOI validation</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body style="background-color: rgb(230, 230, 230)">
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <nav
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+              "
+            >
+              <a href="./schema-guide.html">MongoDB Schema</a>
+            </nav>
+
+            <h1>Controllers making guide OLD (POST works with MongoDB)</h1>
+
+            <ol>
+              <li
+                style="
+                  background-color: white;
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #1391ff; padding: 5px; color: #fff">
+                  getItem by id</b
+                >
+                <ul>
+                  <li>
+                    Case when we get correct id
+                    <ul>
+                      <li>
+                        in route means router.get('/:id', controller.getById);
+                      </li>
+                      <li>
+                        in controller that parameters are in req.params object
+                      </li>
+                      <li>
+                        so in controller f.e. use method find
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="rNZarmX"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/rNZarmX">
+                              5 - get Item by id</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                        <div>
+                          <span style="color: red"
+                            >Remember about id in databases</span
+                          >, ofter set&nbsp; &#818;&nbsp;id, so method find will
+                          be
+                          <div>
+                            const oneProduct = products.find(item => item._id
+                            === id);
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    If we get incorrect id
+                    <ul>
+                      <li>
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="JjaoBwb"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/JjaoBwb">
+                              6 - get Item by Id (check if id incorrect)</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <!-- POST -->
+              <li
+                style="
+                  background-color: rgb(251, 255, 220);
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #009d77; color: #fff; padding: 5px"
+                  >POST</b
+                >
+                <span style="color: red"
+                  >(We make it in cash without real db/rewrite in to file)</span
+                >
+                <ul>
+                  <li>
+                    Make route
+                    <ul>
+                      <li>
+                        routes/products.js
+                        <p>router.post('/', products.add);</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Create controller
+                    <ul>
+                      <li>
+                        controllers/products/add.js
+                        <p>
+                          Firstly for testing what "req.body" is,
+                          <a
+                            target="_blank"
+                            href="https://codepen.io/imitator/pen/VwGYqpx?editors=0010"
+                            >we get it in console</a
+                          >
+                          <span style="display: block"></span>
+                        </p>
+                        <p>
+                          For converting body req we should use "express.json()"
+                          middleware. In our example it used for all requests by
+                          setting it in server.js by app.use(express.json());.
+                        </p>
+                        <span style="display: block">
+                          But for optimizing our server we may use it only for
+                          body requests, that's mean in routes/products.js
+                          <p style="margin-left: 20px">
+                            router.post('/', express.json(), products.add);
+                          </p>
+                        </span>
+
+                        <span
+                          style="
+                            display: block;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                          "
+                        >
+                          Before express.json() developers used another
+                          middleware building in node.js, called
+                          <a
+                            target="_blank"
+                            href="https://codepen.io/imitator/pen/WNgbLzb?editors=0010"
+                            >body-parser</a
+                          >
+                          , in server.js we may use it.</span
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="./postman-request.html"
+                          id="anchor-make-request-via-postman"
+                          >Make request via postman</a
+                        >
+                      </li>
+                      <li>
+                        For testing use UUID to generate id-s
+                        <p style="margin-left: 20px">npm i uuid</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    To sum up, first version of add.js controller (<b
+                      >in this case we add product in cash</b
+                    >, NOT to data/products.js file)
+                    <p
+                      class="codepen"
+                      data-height="430"
+                      data-default-tab="js"
+                      data-slug-hash="QWVbMaL"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/QWVbMaL">
+                          9 - POST controller</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+
+                <h4 style="color: green; margin-top: 20px; text-align: center">
+                  Controller POST works with MongoDB
+                </h4>
+                <ul>
+                  <li>
+                    Make the simplest <b>Schema</b> in
+                    models/schemas/product.schema.js
+                    <p>
+                      Schema below 👇🏼 is really simplest, b/c it's more like
+                      recommendation, than require fields, so go to
+                      <a href="./schema-guide.html">Schema guide</a>
+                    </p>
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="bGxyQxK"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/bGxyQxK">
+                          17 - Schema (for work with MongoDb)</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    <div>
+                      Remember about reexport from folder in
+                      models/schemas/index.js
+                      <div>
+                        <div>
+                          const productSchema = require('./product.schema');
+                        </div>
+
+                        <div>module.exports = {</div>
+                        <div style="margin-left: 20px">productSchema,</div>
+                        <div>};</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    Use Schema in <b>Model</b> in models/product.model.js
+                    <div style="margin-left: 20px; margin-top: 10px">
+                      <div>const { model } = require('mongoose');</div>
+                      <div>const { productSchema } = require('./schemas');</div>
+                      <div style="margin-top: 10px">
+                        const Product = model('product', productSchema);
+                      </div>
+                      <div style="margin-top: 10px">
+                        module.exports = Product;
+                      </div>
+                    </div>
+                    <p>
+                      Remember about reexport from models folder in
+                      models/index.js
+                    </p>
+                    <div>
+                      const Product = require('./product.model');
+                      <div>module.exports = {</div>
+                      <div style="margin-left: 20px">Product,</div>
+                      };
+                    </div>
+                  </li>
+                  <li>
+                    Refactor ctrl from local file to work with MongoDB
+                    <p
+                      class="codepen"
+                      data-height="440"
+                      data-default-tab="js"
+                      data-slug-hash="NWLVeWe"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/NWLVeWe">
+                          18 - POST ctrl using for MongoDB</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    <p>
+                      Some errors aren't in list of
+                      <a
+                        href="https://umbraco.com/knowledge-base/http-status-codes/"
+                        >http-status-codes</a
+                      >, so we try to handle them in catch(error){}, other
+                      errors we gather in other place by sending them in
+                      <b>next(error)</b>, in app.js(index.js), this will be
+                      explaining in next
+                      <a href="./errors-guide-web-server.html"
+                        >Catching errors guide</a
+                      >
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <!-- UPDATE -->
+              <li
+                style="
+                  background-color: rgb(235, 240, 255);
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #e97500; color: #fff; padding: 5px"
+                  >UPDATE</b
+                >
+                <span
+                  >(We make it in cash without real db/rewrite in to file)</span
+                >
+                <ul>
+                  <li>
+                    Create route
+                    <p>router.put('/:id', express.json(), products.update);</p>
+                    <p>
+                      P.S. express.json - middleware for body, could be use in
+                      server.js, like app.use(express.json()); for all requests,
+                      the same explanation was in POST method
+                    </p>
+                  </li>
+                  <li>
+                    Create controller
+                    <p
+                      class="codepen"
+                      data-height="550"
+                      data-default-tab="js"
+                      data-slug-hash="JjadyLr"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/JjadyLr">
+                          10 - UPDATE controller</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+              </li>
+              <!-- DELETE -->
+              <li
+                style="
+                  background-color: white;
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #cf3030; color: #fff; p5">DELETE</b>
+                <span
+                  >(We make it in cash without real db/rewrite in to file)</span
+                >
+                <p>
+                  P.S. It is impossible to create "delete" controller name, b/c
+                  it is reserved word.
+                </p>
+                <ul>
+                  <li>
+                    Create route
+                    <p>router.delete('/:id', products.remove);</p>
+                  </li>
+                  <li>
+                    Create controller
+                    <p
+                      class="codepen"
+                      data-height="550"
+                      data-default-tab="js"
+                      data-slug-hash="wvEaqYV"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/wvEaqYV">
+                          11 - DELETE controller</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>

@@ -35,7 +35,7 @@
                 justify-content: space-around;
               "
             >
-              <span class="current">Express web-server guide</span>
+              <span class="current">Express.js (use local db file)</span>
               <span
                 ><a href="./controllers-guide.html"
                   >Controllers making guide</a
@@ -46,106 +46,18 @@
               >
               <a href="./errors-guide-web-server.html">Catching errors guide</a>
             </nav>
-            <h1>Express web-server guide</h1>
+            <!-- <h1>Express web-server guide</h1> -->
 
             <ol>
-              <li>Create github clean project & clone to your pc.</li>
               <li>
-                Initialize your backend in root folder of your project by
-                default <b>npm init -y</b>
-                <div>
-                  Repository, keywords, author, licence, bugs, homepage - we may
-                  delete these fields in learning rep.
-                </div>
-                <div>
-                  Copy from any repo
-                  <a
-                    target="_blank"
-                    href="https://github.com/torkotiuk?tab=repositories"
-                    >.prettierrc.json</a
-                  >
-                </div>
-              </li>
-              <li>
-                Add script --- <b>"server": "nodemon server.js"</b> --- to
-                package.json for starting backend & create server.js
-                <div>(or index.js if you use https://app.cyclic.sh/)</div>
-              </li>
-              <li>
-                Install main dependencies for backend in root of your project
-                folder by
-                <div><b>npm i express cors dotenv</b></div>
-                and
-                <div><b>npm i nodemon -D</b></div>
-              </li>
-              <li>
-                Add simplest express backend server by (also add ".env" file in
-                root of project with necessary PORT=XXXX)
-
-                <p
-                  class="codepen"
-                  data-height="410"
-                  data-default-tab="js"
-                  data-slug-hash="zYLLygg"
-                  data-user="imitator"
-                  style="
-                    height: 300px;
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 2px solid;
-                    margin: 1em 0;
-                    padding: 1em;
-                    font-size: 22px;
-                  "
+                Create express.js web-server according to
+                <a target="_blank" href="./express-withoutDb.html"
+                  >Express.js - SHORT GUIDE</a
                 >
-                  <span
-                    >See the Pen
-                    <a href="https://codepen.io/imitator/pen/zYLLygg">
-                      1-simplest Express web-server</a
-                    >
-                    by Andrii (<a href="https://codepen.io/imitator"
-                      >@imitator</a
-                    >) on <a href="https://codepen.io">CodePen</a>.</span
-                  >
-                </p>
-                <script
-                  async
-                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                ></script>
               </li>
             </ol>
 
-            <p>
-              For checking of the server working type in terminal
-              <b>npm run server</b> and look at this on
-              <a target="_blank" href="http://localhost:5555/"
-                >http://localhost:5555/</a
-              >
-              (or
-              <a target="_blank" href="http://127.0.0.1:5555/"
-                >http://127.0.0.1:5555/</a
-              >
-              )
-            </p>
-
-            <div>
-              Before pushing the initial repository to the github remember about
-              adding
-              <b>.gitignore</b> to the project including in the beginning
-              <ul>
-                <li>node_modules/</li>
-                <li>.env</li>
-                <li>package-lock.json</li>
-              </ul>
-            </div>
-
-            <p style="color: red">
-              Next steps will work with local db file without real db.
-            </p>
-
-            <ol start="6">
+            <ol start="2">
               <li>
                 Create simplest local proj db in """data/products.js""" & import
                 this db to server.js
@@ -515,7 +427,7 @@
                     More controllers do with
                     <a
                       id="anchor-controller-guide-link"
-                      href="./controllers-guide.html"
+                      href="./express-ctrl.html"
                       >Controllers making guide</a
                     >
                   </li>

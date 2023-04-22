@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express web-server guide</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home &#8678;</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <nav
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+              "
+            >
+              <span class="current">Express.js (use local db file)</span>
+              <span
+                ><a href="./express-ctrl-forlocalDb.html"
+                  >Controllers making guide (local db file)</a
+                ></span
+              >
+              <span><a href="./express-joi.html">Controllers with JOI</a></span>
+            </nav>
+            <!-- <h1>Express web-server guide</h1> -->
+
+            <ol>
+              <li>
+                Create express.js web-server according to
+                <a target="_blank" href="./express-withoutDb.html"
+                  >Express.js - SHORT GUIDE</a
+                >
+              </li>
+              <li>
+                Create simplest local proj db in """data/products.js"""
+                <!--  -->
+
+                <p
+                  class="codepen"
+                  data-height="260"
+                  data-default-tab="js"
+                  data-slug-hash="qByyvVK"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid green;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/qByyvVK">
+                      2-local-db-file</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+
+                <!--  -->
+              </li>
+              <li>
+                In controllers/products/getAll.js use db file in place of the
+                static array
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <div
+                    style="color: grey; outline: 1px solid grey; padding: 5px"
+                  >
+                    <p style="margin: 0">
+                      <b>Static data in controller (OLD)</b>
+                      <span style="display: block">
+                        <!--  -->
+                        <div style="margin-top: 20px"></div>
+                        const getAll = (req, res) => {
+
+                        <div style="margin-left: 20px">
+                          <div>res.json([</div>
+                          <div style="margin-left: 20px">
+                            <div>{</div>
+                            <div style="margin-left: 20px">
+                              <div>name: 'IPhone5',</div>
+                              <div>price: 10000,</div>
+                            </div>
+                            <div>}</div>
+                          </div>
+                          <div>]);</div>
+                        </div>
+                        <div>};</div>
+                        <!--  -->
+                      </span>
+                      module.exports = getAll;
+                    </p>
+                  </div>
+                  <div
+                    style="color: green; outline: 1px solid green; padding: 5px"
+                  >
+                    <b>Data from local db file (NEW)</b>
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="YzJpdeN"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/YzJpdeN">
+                          5-a-getAll.js (from localDB file)</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </div>
+                </div>
+              </li>
+              <li>
+                Add post, getById, update & delete controls according to
+                <a href="./express-ctrl-forlocalDb.html"
+                  >Controllers making guide (local db file)</a
+                >
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>

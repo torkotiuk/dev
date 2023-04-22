@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express - MongoDB</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home &#8678;</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <nav
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+              "
+            >
+              <span class="current">Express.js + MongoDB</span>
+              <span
+                ><a href="./express-mongoDb-CTRL.html"
+                  >Express + MongoDB controllers</a
+                ></span
+              >
+              <a href="./express-mongoDB-schema.html">MongoDB Schema</a>
+            </nav>
+
+            <ol>
+              <li>
+                Create express.js web-server according to
+                <a target="_blank" href="./express-withoutDb.html"
+                  >Express.js - SHORT GUIDE.</a
+                >
+              </li>
+              <li>
+                Add connection link to .env like
+                <b>DB_HOST</b>=..mongodb.net/mydatabase?retryWrites..
+              </li>
+              <li><b>npm i mongoose</b></li>
+              <li>
+                Add mongoDB connection code to server.js (or index.js).
+                <p
+                  class="codepen"
+                  data-height="330"
+                  data-default-tab="js"
+                  data-slug-hash="mdGjPEg"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/mdGjPEg">
+                      14 - MongoDB connection</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+              <li>
+                Make CRUD (controllers) functions (recom. start from POST, b/c
+                there is no any items in DB)
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>

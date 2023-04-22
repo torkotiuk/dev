@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB new project</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <span><a href="./index.html">Home &#8678;</a></span>
+      </div>
+    </header>
+    <main>
+      <section class="section">
+        <div class="container">
+          <ol>
+            <li>
+              Make connection to the real database on
+              <a target="_blank" href="mongodb.com">MongoDB</a> service.
+
+              <ol>
+                <li>
+                  Press <b>New Project</b> button for creating one project for
+                  many databases
+                </li>
+                <li>
+                  Push the button <b>Build a Database</b> for creating first DB
+                </li>
+                <li>Choose nearest region & name a cluster</li>
+                <li>
+                  Go to <b>Database Access</b> tab for creating first user
+                  <ul>
+                    <li>
+                      Name this user & create pass (f.e. login admin, password
+                      admintest)
+                    </li>
+                    <li>
+                      In <b>Built-in Role</b> point choose "Read and write to
+                      any database"
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Go to <b>Network Access</b> tab
+                  <ul>
+                    <li>Add IP Address</li>
+                    <li>
+                      For developing from anywhere, in example of many
+                      developers, choose/press
+                      <b>Allow Access From Anywhere</b> and push Confirm button
+                    </li>
+                  </ul>
+                </li>
+                <li>Back to database tab and go to <b>Cluster</b> link</li>
+                <li>
+                  Go to <b>Collections</b> tab & Load a Sample Dataset for
+                  learning or push "Add My Own Data" button
+                </li>
+                <li>Name database and collection (noun in plural)</li>
+                <li>
+                  To connect for database we should take a link,
+                  <ol>
+                    <li>back to home page of Atlas (Mongo DB)</li>
+                    <li>Go to the necessary project</li>
+                    <li>Push the <b>Connect</b> button</li>
+                    <li>
+                      Choose <b>Connect your application</b> button, where copy
+                      link
+                    </li>
+                    <li>Change in link: user, password, database</li>
+                    <li>
+                      Database name must be between "mongodb.net/" and
+                      "?retryWrites", like
+                      <b
+                        >..mongodb.net/<span style="color: green"
+                          >mydatabase</span
+                        >?retryWrites..</b
+                      >
+                    </li>
+                    <li>
+                      write this link to .env & name variable like DB_HOST
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  In web-server install mongoose lib for working with mongoDb
+                  service <b>npm i mongoose</b>
+                </li>
+                <li>
+                  Add mongoDB connection code
+
+                  <p
+                    class="codepen"
+                    data-height="350"
+                    data-default-tab="js"
+                    data-slug-hash="mdGjPEg"
+                    data-user="imitator"
+                    style="
+                      height: 300px;
+                      box-sizing: border-box;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      border: 2px solid;
+                      margin: 1em 0;
+                      padding: 1em;
+                    "
+                  >
+                    <span
+                      >See the Pen
+                      <a href="https://codepen.io/imitator/pen/mdGjPEg">
+                        14 - MongoDB connection</a
+                      >
+                      by Andrii (<a href="https://codepen.io/imitator"
+                        >@imitator</a
+                      >) on <a href="https://codepen.io">CodePen</a>.</span
+                    >
+                  </p>
+                  <script
+                    async
+                    src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                  ></script>
+                  <div>
+                    Also in good practice app should be started after we have
+                    connection to mongoDB, means like
+                    <div>
+                      .then(() => {
+                      <div style="margin-left: 30px">
+                        <div>
+                          console.log('DataBase was connected successfully');
+                        </div>
+                        <div>
+                          app.listen(PORT, console.log(`Server started on port
+                          ${PORT}`)),
+                        </div>
+                      </div>
+                      })
+                    </div>
+                  </div>
+                  <p>
+                    After "db is connected" refactor controllers according to
+                    work with mongoDb
+                  </p>
+                </li>
+                <li>
+                  <span style="color: red"
+                    >Model & Schema for MongoDB theory, this point is used for
+                    explanation</span
+                  >
+                  <div
+                    style="color: rgb(168, 86, 86); outline: 1px solid black"
+                  >
+                    After successfully connection to database, we may try to
+                    <b>add some object to our mongoDb</b> db (only for
+                    explanation, b/c this object will be added every time in
+                    restarting application)
+                    <ul>
+                      <li>
+                        After "const mongoose = require('mongoose');"
+                        declaration make the code
+                        <!--  -->
+                        <p
+                          class="codepen"
+                          data-height="270"
+                          data-default-tab="js"
+                          data-slug-hash="BaOErdV"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/BaOErdV">
+                              15 - Schema &amp; model in web-server</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                        <!--  -->
+                        <p>
+                          <b>Schema name</b> named in singular name of
+                          collection in some of codes we may see const
+                          productSchema = new Schema({}), but this is improved
+                          for shortest code
+                        </p>
+                        <p>
+                          <b>Model name</b> in good practice named from big
+                          letter in singular noun, also first argument, in our
+                          case "product" named also as a name of collection, but
+                          in singular
+                        </p>
+                      </li>
+                      <li>
+                        After db was successfully connecter write the code
+                        <!--  -->
+
+                        <p
+                          class="codepen"
+                          data-height="270"
+                          data-default-tab="js"
+                          data-slug-hash="OJoGZbG"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/OJoGZbG">
+                              16 - example of object creating in MongoDB</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+
+                        <div>
+                          OR the same but for better practice if anything wrong
+                        </div>
+                        <div>.then(() => {</div>
+                        <div style="margin-left: 30px">
+                          <div>
+                            console.log('DataBase was connected successfully');
+                          </div>
+                          <div>
+                            const newItem = {
+                            <div style="margin-left: 30px">
+                              name: 'myBrand',
+                              <div>price: '5222',</div>
+                            </div>
+                            };
+                          </div>
+                          <div>
+                            Product.create(newItem,
+                            <span style="color: green">(error, data) => {</span>
+                            <div style="margin-left: 30px; color: green">
+                              if (error) {
+                              <div style="margin-left: 30px">
+                                console.log(error);
+                                <div>return</div>
+                              </div>
+                              }
+                              <div>console.log(data);</div>
+                            </div>
+                            <div>
+                              <span style="color: green; font-weight: bold"
+                                >}</span
+                              >
+                              );
+                            </div>
+                          </div>
+                        </div>
+                        <div>})</div>
+                        <p>
+                          OR the same, bt with Better practice of async
+                          functions
+                        </p>
+                        <div>
+                          <p
+                            class="codepen"
+                            data-height="350"
+                            data-default-tab="js"
+                            data-slug-hash="RwYOBJx"
+                            data-user="imitator"
+                            style="
+                              height: 300px;
+                              box-sizing: border-box;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              border: 2px solid;
+                              margin: 1em 0;
+                              padding: 1em;
+                            "
+                          >
+                            <span
+                              >See the Pen
+                              <a href="https://codepen.io/imitator/pen/RwYOBJx">
+                                16 - A example of object creating in MongoDB
+                                with async</a
+                              >
+                              by Andrii (<a href="https://codepen.io/imitator"
+                                >@imitator</a
+                              >) on
+                              <a href="https://codepen.io">CodePen</a>.</span
+                            >
+                          </p>
+                          <script
+                            async
+                            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                          ></script>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+    <footer><div class="container">Footer</div></footer>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB - CTRL</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body style="background-color: rgb(230, 230, 230)">
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <nav
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+              "
+            >
+              <a href="./express-mongoDb.html">Express.js + MongoDB</a>
+              <span class="current">Express + MongoDB controllers</span>
+              <a href="./express-mongoDB-schema.html">MongoDB Schema</a>
+            </nav>
+
+            <h1>Express + MongoDB controllers</h1>
+
+            <ol>
+              <!-- POST -->
+              <li
+                style="
+                  background-color: rgb(251, 255, 220);
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #009d77; color: #fff; padding: 5px"
+                  >POST</b
+                >
+
+                <h4 style="color: green; margin-top: 20px; text-align: center">
+                  Controller POST works with MongoDB
+                </h4>
+                <ul>
+                  <li>
+                    Make the
+                    <a
+                      target="_blank"
+                      href="./express-mongoDB-schema._simplest.html"
+                      ><b>simplest Schema</b></a
+                    >
+                    in models/schemas/product.schema.js for quick start with
+                    MongoDb (or go to
+                    <a href="./express-mongoDB-schema.html">MongoDb Schema</a>
+                    for making a usual projects one)
+                  </li>
+
+                  <li>
+                    Refactor ctrl from local file to work with MongoDB or create
+                    controllers/products/add.js
+                    <p
+                      class="codepen"
+                      data-height="440"
+                      data-default-tab="js"
+                      data-slug-hash="NWLVeWe"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/NWLVeWe">
+                          18 - POST ctrl using for MongoDB</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    <p>
+                      Some errors aren't in list of
+                      <a
+                        target="_blank"
+                        href="https://umbraco.com/knowledge-base/http-status-codes/"
+                        >http-status-codes</a
+                      >, so we try to handle them in catch(error){}, other
+                      errors we gather in other place by sending them in
+                      <b>next(error)</b>, in app.js(index.js), this will be
+                      explaining in next
+                      <a target="_blank" href="./express-catchErrors.html"
+                        >Catching errors guide</a
+                      >
+                    </p>
+                  </li>
+                  <li>
+                    Add Catching errors middleware to server.js (or index.js)
+                    after all middlewares.
+                  </li>
+                  <li>Create route: router.post('/', ctrl.add);</li>
+                  <li>
+                    Make some post request (<a
+                      target="_blank"
+                      href="./postman-request.html"
+                      >via POSTMAN f.e.</a
+                    >)
+                  </li>
+                </ul>
+              </li>
+              <!-- getAll -->
+              <li
+                style="
+                  background-color: white;
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #1391ff; padding: 5px; color: #fff">
+                  getAll</b
+                >
+              </li>
+              <!-- getById -->
+              <li
+                style="
+                  background-color: white;
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #1391ff; padding: 5px; color: #fff">
+                  getItem by id</b
+                >
+              </li>
+              <!-- UPDATE -->
+              <li
+                style="
+                  background-color: rgb(235, 240, 255);
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #e97500; color: #fff; padding: 5px"
+                  >UPDATE</b
+                >
+              </li>
+              <!-- DELETE -->
+              <li
+                style="
+                  background-color: white;
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #cf3030; color: #fff; p5">DELETE</b>
+                <p>
+                  P.S. It is impossible to create "delete" controller name, b/c
+                  it is reserved word.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
