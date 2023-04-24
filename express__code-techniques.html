@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express - code techniques</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home &#8678;</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <h1>Code techniques</h1>
+
+            <ul>
+              <li>
+                Variables declaration & destructuring with values in default:
+                <ul>
+                  <li>
+                    <p>
+                      const { code = 500, message = 'server error' } = error;
+                    </p>
+                  </li>
+                  <li>const PORT = process.env.PORT || 5000;</li>
+                  <li>const { DB_HOST } = process.env;</li>
+                  <li>const { DB_HOST, PORT = 5000 } = process.env;</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
