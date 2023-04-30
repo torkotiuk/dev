@@ -42,6 +42,20 @@
                   <li>const PORT = process.env.PORT || 5000;</li>
                   <li>const { DB_HOST } = process.env;</li>
                   <li>const { DB_HOST, PORT = 5000 } = process.env;</li>
+                  <li>
+                    <b>Simplest</b> code writing:
+                    <ul>
+                      <li>
+                        <div>const dotenv = require('dotenv');</div>
+                        <div>dotenv.config();</div>
+                      </li>
+                    </ul>
+                    <p></p>
+                    <div>The same <b>with chaining:</b></div>
+                    <ul>
+                      <li><div>require('dotenv').config();</div></li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
             </ul>

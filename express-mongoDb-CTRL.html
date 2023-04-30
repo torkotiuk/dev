@@ -117,7 +117,7 @@
                       <b>next(error)</b>, in app.js(index.js), this will be
                       explaining in next
                       <a target="_blank" href="./express-catchErrors.html"
-                        >Catching errors guide</a
+                        >Catching errors middleware guide</a
                       >
                     </p>
                   </li>
@@ -126,7 +126,10 @@
                     after all middlewares.
                   </li>
 
-                  <li>Create route: router.post('/', ctrl.add);</li>
+                  <li>
+                    Create in routes/products.routes.js the route:
+                    <b>router.post('/', ctrl.add);</b>
+                  </li>
                   <li>
                     Make some post request (<a
                       target="_blank"
@@ -147,6 +150,44 @@
                 <b style="background-color: #1391ff; padding: 5px; color: #fff">
                   getAll</b
                 >
+                Refactor controllers\products\getAll.js for work with MongoDb
+                <!--  -->
+                <ul>
+                  <li>
+                    <p
+                      class="codepen"
+                      data-height="360"
+                      data-default-tab="js"
+                      data-slug-hash="JjmyVMp"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/JjmyVMp">
+                          21 - getAll ___ctrl__ MongoDB</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+                <!--  -->
               </li>
               <!-- getById -->
               <li
@@ -159,6 +200,42 @@
                 <b style="background-color: #1391ff; padding: 5px; color: #fff">
                   getItem by id</b
                 >
+                <ul>
+                  <li>
+                    Make controllers\products\getById.js
+                    <p
+                      class="codepen"
+                      data-height="460"
+                      data-default-tab="js"
+                      data-slug-hash="gOBxyvJ"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/gOBxyvJ">
+                          22 - getById __ctrl__MondoDb</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
               </li>
               <!-- UPDATE -->
               <li
@@ -171,6 +248,41 @@
                 <b style="background-color: #e97500; color: #fff; padding: 5px"
                   >UPDATE</b
                 >
+                <ul>
+                  <li>
+                    <p
+                      class="codepen"
+                      data-height="500"
+                      data-default-tab="js"
+                      data-slug-hash="YzJxMaR"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/YzJxMaR">
+                          23 - update __ctrl__MongoDb</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
               </li>
               <!-- DELETE -->
               <li
@@ -185,6 +297,37 @@
                   P.S. It is impossible to create "delete" controller name, b/c
                   it is reserved word.
                 </p>
+                <p
+                  class="codepen"
+                  data-height="500"
+                  data-default-tab="js"
+                  data-slug-hash="rNqzbvw"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/rNqzbvw">
+                      24 - delete __ctrl__MongoDb</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
               </li>
             </ol>
           </div>

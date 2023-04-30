@@ -228,8 +228,8 @@
               </li>
               <li>
                 The next step in making convenient web-server is separating
-                functions/<b>controllers</b> from routes folder by creating
-                controllers folder in main project folder.
+                <b>controllers</b> from routes folder by creating controllers
+                folder in main project folder.
                 <ul>
                   <li>
                     Create controllers/products folder, so move controller from
@@ -285,16 +285,16 @@
                       <li>
                         controllers/index.js
                         <p>
-                          const products = require('./products');
+                          const productsControllers = require('./products');
                           <span style="display: block"
-                            >module.exports = { products };</span
+                            >module.exports = { productsControllers };</span
                           >
                         </p>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    Import products controllers from controller folder & use
+                    Import products controllers from controllers folder & use
                     necessary one
                     <ul>
                       <li>
@@ -304,25 +304,33 @@
                           <span style="display: block"
                             >const router = express.Router();
                           </span>
-                          <span style="display: block"
-                            >const { products } = require('../controllers');
+                          <span
+                            style="
+                              display: block;
+                              font-weight: 700;
+                              color: grey;
+                            "
+                            >const { productsControllers } =
+                            require('../controllers');
                           </span>
                           <span style="display: block"
-                            >router.get('/', products.getAll);
+                            >router.get('/',
+                            <b style="color: grey">productsControllers.getAll</b
+                            >);
                           </span>
                           module.exports = router;
                         </p>
                       </li>
                       <li>
-                        OR with renaming products to ctrl when importing
-                        controllers
+                        OR with renaming productsControllers to ctrl when
+                        importing controllers
                         <p style="color: rgb(168, 86, 86)">
                           const express = require('express');
                           <span style="display: block"
                             >const router = express.Router();
                           </span>
                           <span style="display: block"
-                            >const { products: <b>ctrl</b> } =
+                            >const { productsControllers: <b>ctrl</b> } =
                             require('../controllers');
                           </span>
                           <span style="display: block"
