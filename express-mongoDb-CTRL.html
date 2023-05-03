@@ -393,6 +393,20 @@
                 </ul>
               </li>
             </ol>
+            <p>
+              P.S. getById, update & delete controllers look for object by id,
+              so if id isn't found in db, mongoDb response error like
+              <span style="color: red">"Cast to ObjectId failed for..."</span>
+              and according to our
+              <a target="_blank" href="./express-catchErrors.html"
+                >Catching errors middleware</a
+              >
+              response code=500, but it isn't really "server error", more "Bad
+              request" with code=400, also frontend developers will understand
+              better error message `Product with id --- ${req.params.id} --- Not
+              Found`. So this kind of error should be caught by commented code
+              in catch(error) {}
+            </p>
           </div>
         </section>
       </main>
