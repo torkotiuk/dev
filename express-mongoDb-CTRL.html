@@ -74,7 +74,8 @@
 
                   <li>
                     Refactor ctrl from local file to work with MongoDB or create
-                    controllers/products/add.js
+                    controllers/products/add.js (remember about reexport
+                    controllers\products\index.js)
                     <p
                       class="codepen"
                       data-height="440"
@@ -186,6 +187,15 @@
                       src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                     ></script>
                   </li>
+                  <li>
+                    Make a get request in postman for address
+                    <a
+                      target="_blank"
+                      href="http://localhost:5555/api/v1/products"
+                      >http://localhost:5555/api/v1/products</a
+                    >
+                    or check it in a browser
+                  </li>
                 </ul>
                 <!--  -->
               </li>
@@ -202,7 +212,8 @@
                 >
                 <ul>
                   <li>
-                    Make controllers\products\getById.js
+                    Make controllers\products\getById.js (remember about
+                    reexport in controllers\products\index.js)
                     <p
                       class="codepen"
                       data-height="460"
@@ -235,6 +246,19 @@
                       src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                     ></script>
                   </li>
+                  <li>
+                    Create in routes/products.routes.js the route:
+                    router.get('/:id', ctrl.getById);
+                  </li>
+                  <li>
+                    Make a get request in postman for address:
+                    <span
+                      >http://localhost:5555/api/v1/products/<span
+                        style="color: green"
+                        >IDfromDataBase</span
+                      >
+                    </span>
+                  </li>
                 </ul>
               </li>
               <!-- UPDATE -->
@@ -249,6 +273,10 @@
                   >UPDATE</b
                 >
                 <ul>
+                  <li>
+                    Make controllers\products\updateProductCTRL.js (remember
+                    about reexport in controllers\products\index.js)
+                  </li>
                   <li>
                     <p
                       class="codepen"
@@ -282,6 +310,19 @@
                       src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                     ></script>
                   </li>
+                  <li>
+                    Create in routes/products.routes.js the route:
+                    router.put('/:id', ctrl.updateProductCTRL);
+                  </li>
+                  <li>
+                    Make a put request in postman for address:
+                    <span
+                      >http://localhost:5555/api/v1/products/<span
+                        style="color: green"
+                        >IDfromDataBase</span
+                      >
+                    </span>
+                  </li>
                 </ul>
               </li>
               <!-- DELETE -->
@@ -297,37 +338,59 @@
                   P.S. It is impossible to create "delete" controller name, b/c
                   it is reserved word.
                 </p>
-                <p
-                  class="codepen"
-                  data-height="500"
-                  data-default-tab="js"
-                  data-slug-hash="rNqzbvw"
-                  data-user="imitator"
-                  style="
-                    height: 300px;
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 2px solid;
-                    margin: 1em 0;
-                    padding: 1em;
-                  "
-                >
-                  <span
-                    >See the Pen
-                    <a href="https://codepen.io/imitator/pen/rNqzbvw">
-                      24 - delete __ctrl__MongoDb</a
+
+                <ul>
+                  <li>
+                    Make controllers\products\delProductCTRL.js (remember about
+                    reexport in controllers\products\index.js)
+                  </li>
+                  <li>
+                    <p
+                      class="codepen"
+                      data-height="500"
+                      data-default-tab="js"
+                      data-slug-hash="rNqzbvw"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
                     >
-                    by Andrii (<a href="https://codepen.io/imitator"
-                      >@imitator</a
-                    >) on <a href="https://codepen.io">CodePen</a>.</span
-                  >
-                </p>
-                <script
-                  async
-                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                ></script>
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/rNqzbvw">
+                          24 - delete __ctrl__MongoDb</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    Create in routes/products.routes.js the route:
+                    router.delete('/:id', ctrl.delProductCTRL);
+                  </li>
+                  <li>
+                    Make a delete request in postman for address:
+                    <span
+                      >http://localhost:5555/api/v1/products/<span
+                        style="color: green"
+                        >IDfromDataBase</span
+                      >
+                    </span>
+                  </li>
+                </ul>
               </li>
             </ol>
           </div>
