@@ -151,7 +151,11 @@
                 <b style="background-color: #1391ff; padding: 5px; color: #fff">
                   getAll</b
                 >
-                Refactor controllers\products\getAll.js for work with MongoDb
+                Refactor controllers\products\getAll.js for work with MongoDb.
+                <p>
+                  P.S. Mongoose method Model.find({}) - empty obj {} means to
+                  find all documents
+                </p>
                 <!--  -->
                 <ul>
                   <li>
@@ -195,6 +199,17 @@
                       >http://localhost:5555/api/v1/products</a
                     >
                     or check it in a browser
+                  </li>
+                  <li>
+                    This point is more for explanation & useful for frontend
+                    developers. In case when a collection doesn't have any items
+                    the controller above ☝🏼 response like "[]", so for
+                    additional information for frontend developers we add
+                    <a
+                      target="_blank"
+                      href="https://codepen.io/imitator/pen/PoyEgbE?editors=0010"
+                      >one more checking in code</a
+                    >
                   </li>
                 </ul>
                 <!--  -->
@@ -259,6 +274,11 @@
                       >
                     </span>
                   </li>
+                  <li>
+                    P.S. remember about other methods for finding item, like
+                    <div>Product.findOne({ _id: id });</div>
+                    <div>Product.findOne({ email });</div>
+                  </li>
                 </ul>
               </li>
               <!-- UPDATE -->
@@ -322,6 +342,11 @@
                         >IDfromDataBase</span
                       >
                     </span>
+                  </li>
+                  <li>
+                    P.S. method findIdAndUpdate works like http method
+                    <b style="color: #61affe">PATCH</b>, that means that we may
+                    sent only one field with change, not all object.
                   </li>
                 </ul>
               </li>
@@ -407,6 +432,55 @@
               Found`. So this kind of error should be caught by commented code
               in catch(error) {}
             </p>
+
+            <p>
+              P.S. Next step of creating a convenient web-server project is
+              separating transferring information from controllers (means like
+              Model.create(), Model.find()) to separate folder, called
+              <b>services</b> in root of a project. So in this case
+              <a target="_blank" href="./express-mongoDb-CTRL__services.html"
+                >controllers with services</a
+              >
+              will be look like.
+            </p>
+
+            <div>
+              P.S.
+              <div>
+                There are methods in mongoose, that response us not really
+                necessary info: updateOne, deleteOne, updateMany, deleteMany
+                <div>return Category.updateOne({ _id: id }, body);</div>
+                <p>-</p>
+                <div>return Category.findByIdAndUpdate(id, body);</div>
+                <div>findByIdAndUpdate - response old object</div>
+                <p>-</p>
+                <div>return Category.findOneAndUpdate({ _id: id }, body);</div>
+                <div>findOneAndUpdate - response old object</div>
+                <p>-</p>
+
+                <p>Setting <b>{ new: true }</b> helps response updated obj</p>
+                <div>
+                  return Category.findOneAndUpdate({ _id: id }, body, { new:
+                  true });
+                </div>
+                <div>
+                  return Category.findByIdAndUpdate(id, body, { new: true });
+                </div>
+                <p>
+                  Also findByIdAndUpdate updates in object only field, that we
+                  would like to update
+                </p>
+
+                <div>
+                  F.e. obj in db {name: "abc", price: 555}, in request we may
+                  write only {price: 123}
+                </div>
+                <div>
+                  To sum up mongoose method findIdAndUpdate works like http
+                  method <b style="color: #61affe">PATCH</b>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

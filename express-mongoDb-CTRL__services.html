@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB - CTRL+services</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body style="background-color: rgb(230, 230, 230)">
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span><a href="./index.html">Home</a></span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <nav
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+              "
+            >
+              <span class="current">Controllers + Services</span>
+            </nav>
+
+            <h1>Controllers + Services</h1>
+
+            <ol>
+              <li>
+                Create services/category.services.js
+                <p
+                  class="codepen"
+                  data-height="300"
+                  data-default-tab="js"
+                  data-slug-hash="XWxVLgP"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/XWxVLgP">
+                      25 - Catgegory.services__mongoDb_web-server</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <p>
+                  In this case const { Category } = require('../models');
+                  imported only once.
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+              <li>
+                Grab all category services to one object in services/index.js
+                <p
+                  class="codepen"
+                  data-height="200"
+                  data-default-tab="js"
+                  data-slug-hash="eYPywML"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/eYPywML">
+                      26 - Category-services__index.js</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+
+              <li>
+                Refactor controllers due to changes:
+                <ul>
+                  <li>
+                    Remove line: const { Category } = require('../../models');
+                    and import service
+                  </li>
+                  <li>Use service in every controller in front of model</li>
+                </ul>
+                <ul>
+                  <!-- POST -->
+                  <li
+                    style="
+                      background-color: rgb(251, 255, 220);
+                      border-radius: 8px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <b
+                      style="
+                        background-color: #009d77;
+                        color: #fff;
+                        padding: 5px;
+                      "
+                      >POST</b
+                    >
+
+                    <h4
+                      style="color: green; margin-top: 20px; text-align: center"
+                    ></h4>
+                    <ul>
+                      <li>
+                        <p
+                          class="codepen"
+                          data-height="480"
+                          data-default-tab="js"
+                          data-slug-hash="LYgewWZ"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/LYgewWZ">
+                              27 - POST ctrl acc. to services</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- getAll -->
+                  <li
+                    style="
+                      background-color: white;
+                      border-radius: 8px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <b
+                      style="
+                        background-color: #1391ff;
+                        padding: 5px;
+                        color: #fff;
+                      "
+                    >
+                      getAll</b
+                    >
+
+                    <!--  -->
+                    <ul>
+                      <li>
+                        <p
+                          class="codepen"
+                          data-height="400"
+                          data-default-tab="js"
+                          data-slug-hash="poxpMwY"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/poxpMwY">
+                              28 - GET_getAll_ ctrl acc. to services</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                    <!--  -->
+                  </li>
+                  <!-- getById -->
+                  <li
+                    style="
+                      background-color: white;
+                      border-radius: 8px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <b
+                      style="
+                        background-color: #1391ff;
+                        padding: 5px;
+                        color: #fff;
+                      "
+                    >
+                      getItem by id</b
+                    >
+                    <ul>
+                      <li>
+                        <p
+                          class="codepen"
+                          data-height="620"
+                          data-default-tab="js"
+                          data-slug-hash="dygJxZv"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/dygJxZv">
+                              29 - GET__getById__ ctrl acc. to services</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- UPDATE -->
+                  <li
+                    style="
+                      background-color: rgb(235, 240, 255);
+                      border-radius: 8px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <b
+                      style="
+                        background-color: #e97500;
+                        color: #fff;
+                        padding: 5px;
+                      "
+                      >UPDATE</b
+                    >
+                    <ul>
+                      <li>
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="YzJYmLx"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/YzJYmLx">
+                              27 - PUT__ctrl acc. to services</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- DELETE -->
+                  <li
+                    style="
+                      background-color: white;
+                      border-radius: 8px;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    <b style="background-color: #cf3030; color: #fff; p5"
+                      >DELETE</b
+                    >
+
+                    <ul>
+                      <li>
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="bGmaXmQ"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/bGmaXmQ">
+                              31 - DELETE__ctrl acc. to services</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                        <p style="color: red">
+                          P.S. In DELETE controller remember about second way of
+                          response.
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
