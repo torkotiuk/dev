@@ -417,6 +417,28 @@
                   </li>
                 </ul>
               </li>
+              <li
+                style="
+                  background-color: rgb(235, 240, 255);
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <p>
+                  Next step of creating a convenient web-server project (but not
+                  necessarily, if you do it first time, you should missed this
+                  point) is separating transferring information from controllers
+                  (means like Model.create(), Model.find()) to separate folder,
+                  called
+                  <b>services</b> in root of a project. So in this case
+                  <a
+                    target="_blank"
+                    href="./express-mongoDb-CTRL__services.html"
+                    >controllers with services</a
+                  >
+                  will be look like.
+                </p>
+              </li>
             </ol>
             <p>
               P.S. getById, update & delete controllers look for object by id,
@@ -431,17 +453,6 @@
               better error message `Product with id --- ${req.params.id} --- Not
               Found`. So this kind of error should be caught by commented code
               in catch(error) {}
-            </p>
-
-            <p>
-              P.S. Next step of creating a convenient web-server project is
-              separating transferring information from controllers (means like
-              Model.create(), Model.find()) to separate folder, called
-              <b>services</b> in root of a project. So in this case
-              <a target="_blank" href="./express-mongoDb-CTRL__services.html"
-                >controllers with services</a
-              >
-              will be look like.
             </p>
 
             <div>

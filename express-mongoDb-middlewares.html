@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>express-mongoDb-middlewares</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <!-- <span><a href="./index.html">Home &#8678;</a></span> -->
+          <span> </span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <h1>Middlewares</h1>
+
+            <ol>
+              <li>
+                <b
+                  >Additional schema category checking
+                  <span style="font-weight: 400"
+                    >(middleware for checking only category)</span
+                  >
+                </b>
+                could be before asking in Model schema of MongoDB. Actually if
+                we write very good mongoDb model schema, we don't need to write
+                additional schema check, but we have to know about this. This
+                kind of checking makes with JOI f.e.
+                <ul>
+                  <li>
+                    Make middleware file middlewares\newCategoryValidate.js
+                  </li>
+                  <li>
+                    Install Joi if you don't do it before
+                    <b>npm i joi</b>
+                  </li>
+                  <li>
+                    Make function (in our example it is "validateCategory") that
+                    take data and due to JOI help return error if error will be.
+                  </li>
+                  <li>
+                    Make middleware (in our example it is
+                    "categoryValidateMiddleware" that use function in the
+                    previous point).
+                  </li>
+                  <li>
+                    <p
+                      class="codepen"
+                      data-height="500"
+                      data-default-tab="js"
+                      data-slug-hash="zYmRbge"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/zYmRbge">
+                          32__JOI-schema__used as a middleware</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    Make reexports from middlewares folder in
+                    \middlewares\index.js if needed
+                    <div>
+                      const categoryValidateMiddleware =
+                      require('./newCategoryValidate');
+                    </div>
+                    <div>module.exports = {</div>
+                    <div style="margin-left: 20px">
+                      categoryValidateMiddleware,
+                    </div>
+                    <div>};</div>
+                  </li>
+                  <li>
+                    Use <b>categoryValidateMiddleware</b> in routes
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="yLRvrNq"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/yLRvrNq">
+                          33__use Joi middleware in routes</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+              </li>
+              <li
+                style="margin-top: 20px; background-color: rgb(231, 255, 228)"
+              >
+                More universal middleware than
+                <span style="color: grey"
+                  >Additional schema category checking</span
+                >
+                is some kind of <b>validateSchemaMiddleware</b>, that could
+                handle category, user, etc. checking. Means that we use one
+                middleware for checking different schemas.
+                <ul>
+                  <li>
+                    Create <b>joiCategoryHandler</b> -
+                    middlewares\joiHandlersWithSchemas\joiCategoryHandler.js,
+                    (it could be crated anywhere else, f.e. in utils or in
+                    helpers, but in this example we created in middleware
+                    folder)
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="RweQXpo"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/RweQXpo">
+                          34__joiCategoryHandler
+                        </a>
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    Make reexports (middlewares\joiHandlersWithSchemas\index.js
+                    ) if you mind
+                    <div>
+                      <div>
+                        const joiCategoryHandler =
+                        require('./joiCategoryHandler');
+                      </div>
+
+                      <div>module.exports = {</div>
+                      <div style="margin-left: 20px">joiCategoryHandler,</div>
+                      <div>};</div>
+                    </div>
+                  </li>
+                  <li>
+                    Create middleware
+                    <b>middlewares\validateSchemaMiddleware.js</b>
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="wvYyVep"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/wvYyVep">
+                          35__validateSchemaMiddleware</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    Make reexport in middlewares\index.js
+                    <div>
+                      <div>
+                        const validateSchemaMiddleware =
+                        require('./validateSchemaMiddleware');
+                      </div>
+
+                      <div>module.exports = {</div>
+                      <div style="margin-left: 20px">
+                        validateSchemaMiddleware,
+                      </div>
+                      <div>};</div>
+                    </div>
+                  </li>
+                  <li>
+                    Use this middleware in routes
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="poxaMdQ"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/poxaMdQ">
+                          36__use validateSchemaMiddleware in routes</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
