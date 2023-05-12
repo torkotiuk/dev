@@ -144,7 +144,10 @@
                     </ul>
                   </li>
 
-                  <li>Create GET response router.get('/', () => {})</li>
+                  <li>
+                    Create GET response router.get('/', (req, res) => {}), where
+                    (req, res) => {} - is a controller.
+                  </li>
                 </ul>
 
                 To sum up our routes/products.routes.js will be
@@ -236,12 +239,12 @@
                     routes/products.routes.js
                     <ul>
                       <li>
-                        controllers/products/getAll.js
+                        controllers/products/getAllProductsCTRL.js
                         <p style="margin: 0">
                           <span style="display: block">
                             <!--  -->
                             <div style="margin-top: 20px"></div>
-                            const getAll = (req, res) => {
+                            const getAllProductsCTRL = (req, res) => {
 
                             <div style="margin-left: 20px">
                               <div>res.json([</div>
@@ -258,21 +261,22 @@
                             <div>};</div>
                             <!--  -->
                           </span>
-                          module.exports = getAll;
+                          module.exports = getAllProductsCTRL;
                         </p>
                       </li>
                     </ul>
                   </li>
                   <li>
                     Reexport functions from controllers folder by making
-                    controller/products/index.js file
+                    controllers/products/index.js file
                     <ul>
                       <li>
                         controller/products/index.js
                         <p>
-                          const getAll = require('./getAll');
+                          const getAllProductsCTRL =
+                          require('./getAllProductsCTRL');
                           <span style="display: block"
-                            >module.exports = {getAll };</span
+                            >module.exports = {getAllProductsCTRL.js};</span
                           >
                         </p>
                       </li>
@@ -315,7 +319,8 @@
                           </span>
                           <span style="display: block"
                             >router.get('/',
-                            <b style="color: grey">productsControllers.getAll</b
+                            <b style="color: grey"
+                              >productsControllers.getAllProductsCTRL</b
                             >);
                           </span>
                           module.exports = router;
@@ -334,7 +339,7 @@
                             require('../controllers');
                           </span>
                           <span style="display: block"
-                            >router.get('/', <b>ctrl</b>.getAll);
+                            >router.get('/', <b>ctrl</b>.getAllProductsCTRL);
                           </span>
                           module.exports = router;
                         </p>

@@ -43,6 +43,18 @@
             <h1>Express + MongoDB controllers</h1>
 
             <ol>
+              <li style="padding-bottom: 20px">
+                Make the
+                <a
+                  target="_blank"
+                  href="./express-mongoDB-schema._simplest.html"
+                  ><b>simplest Schema</b></a
+                >
+                in models/schemas/product.schema.js for quick start with MongoDb
+                (or go to
+                <a href="./express-mongoDB-schema.html">MongoDb Schema</a>
+                for making a usual projects one).
+              </li>
               <!-- POST -->
               <li
                 style="
@@ -60,22 +72,9 @@
                 </h4>
                 <ul>
                   <li>
-                    Make the
-                    <a
-                      target="_blank"
-                      href="./express-mongoDB-schema._simplest.html"
-                      ><b>simplest Schema</b></a
-                    >
-                    in models/schemas/product.schema.js for quick start with
-                    MongoDb (or go to
-                    <a href="./express-mongoDB-schema.html">MongoDb Schema</a>
-                    for making a usual projects one).
-                  </li>
-
-                  <li>
                     Refactor ctrl from local file to work with MongoDB or create
-                    controllers/products/add.js (remember about reexport
-                    controllers\products\index.js)
+                    controllers/products/addProductCTRL.js (remember about
+                    reexports in controllers\products\index.js)
                     <p
                       class="codepen"
                       data-height="440"
@@ -151,7 +150,8 @@
                 <b style="background-color: #1391ff; padding: 5px; color: #fff">
                   getAll</b
                 >
-                Refactor controllers\products\getAll.js for work with MongoDb.
+                Refactor controllers\products\getAllProductsCTRL.js for work
+                with MongoDb.
                 <p>
                   P.S. Mongoose method Model.find({}) - empty obj {} means to
                   find all documents
@@ -211,6 +211,15 @@
                       >one more checking in code</a
                     >
                   </li>
+                  <li>
+                    This point is needed if we connect products collection with
+                    categories collection.
+                    <a
+                      target="_blank"
+                      href="https://codepen.io/imitator/pen/OJBERyy?editors=0010"
+                      >Controller with populate() method.</a
+                    >
+                  </li>
                 </ul>
                 <!--  -->
               </li>
@@ -223,12 +232,12 @@
                 "
               >
                 <b style="background-color: #1391ff; padding: 5px; color: #fff">
-                  getItem by id</b
+                  getById</b
                 >
                 <ul>
                   <li>
-                    Make controllers\products\getById.js (remember about
-                    reexport in controllers\products\index.js)
+                    Make controllers\products\getByIdProductCTRL.js (remember
+                    about reexport in controllers\products\index.js)
                     <p
                       class="codepen"
                       data-height="460"
@@ -350,6 +359,21 @@
                   </li>
                 </ul>
               </li>
+              <li
+                style="
+                  background-color: white;
+                  border-radius: 8px;
+                  margin-bottom: 10px;
+                "
+              >
+                <b style="background-color: #61affe; color: #fff; p5">PATCH</b>
+                <ul>
+                  <li>
+                    In example before (in http method UPDATE) found out that we
+                    may use the same route for patching data.
+                  </li>
+                </ul>
+              </li>
               <!-- DELETE -->
               <li
                 style="
@@ -415,6 +439,25 @@
                       >
                     </span>
                   </li>
+                  <li>
+                    <p>
+                      P.S. getById, update & delete controllers look for object
+                      by id, so if id isn't found in db, mongoDb response error
+                      like
+                      <span style="color: red"
+                        >"Cast to ObjectId failed for..."</span
+                      >
+                      and according to our
+                      <a target="_blank" href="./express-catchErrors.html"
+                        >Catching errors middleware</a
+                      >
+                      response code=500, but it isn't really "server error",
+                      more "Bad request" with code=400, also frontend developers
+                      will understand better error message `Product with id ---
+                      ${req.params.id} --- Not Found`. So this kind of error
+                      should be caught by commented code in catch(error) {}
+                    </p>
+                  </li>
                 </ul>
               </li>
               <li
@@ -440,20 +483,6 @@
                 </p>
               </li>
             </ol>
-            <p>
-              P.S. getById, update & delete controllers look for object by id,
-              so if id isn't found in db, mongoDb response error like
-              <span style="color: red">"Cast to ObjectId failed for..."</span>
-              and according to our
-              <a target="_blank" href="./express-catchErrors.html"
-                >Catching errors middleware</a
-              >
-              response code=500, but it isn't really "server error", more "Bad
-              request" with code=400, also frontend developers will understand
-              better error message `Product with id --- ${req.params.id} --- Not
-              Found`. So this kind of error should be caught by commented code
-              in catch(error) {}
-            </p>
 
             <div>
               P.S.

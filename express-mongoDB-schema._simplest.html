@@ -80,7 +80,7 @@
                   </div>
                 </div>
               </li>
-              <li>
+              <li style="padding-top: 20px">
                 Use Schema in <b>Model</b> in models/product.model.js
                 <div style="margin-left: 20px; margin-top: 10px">
                   <div>const { model } = require('mongoose');</div>
@@ -141,6 +141,58 @@
                   async
                   src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                 ></script>
+              </li>
+              <li style="padding-top: 20px">
+                <b>Connection</b> (binding) between collections has usually
+                making with id. So if we would like to bing product collection
+                with category, we add in schema field like
+                <p
+                  class="codepen"
+                  data-height="300"
+                  data-default-tab="js"
+                  data-slug-hash="PoyazyM"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/PoyazyM">
+                      17__B__Schema_binding_collections</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                So HTTP request will be with name, price & <b>categoryID</b>,
+                actually we select one of the existing categories (means user
+                selects in form).
+                <div>
+                  Check
+                  <a target="_blank" href="./postman-request.html"
+                    >POST request</a
+                  >
+                  making in this case.
+                </div>
+                <div>
+                  Look at
+                  <a href="https://codepen.io/imitator/pen/OJBERyy?editors=0010"
+                    >Controller with populate() method.</a
+                  >
+                </div>
               </li>
             </ol>
           </div>
