@@ -67,8 +67,11 @@
                   async
                   src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                 ></script>
-                <div>
-                  Remember about reexport from folder in models/schemas/index.js
+                <div style="color: grey">
+                  <p>
+                    Remember about reexport from folder in
+                    models/schemas/index.js
+                  </p>
                   <div>
                     <div>
                       const productSchema = require('./product.schema');
@@ -90,16 +93,20 @@
                   </div>
                   <div style="margin-top: 10px">module.exports = Product;</div>
                 </div>
-                <p>
-                  Remember about reexport from models folder in models/index.js
-                </p>
+                <div style="color: grey">
+                  <p>
+                    Remember about reexport from models folder in
+                    models/index.js
+                  </p>
 
-                <div>
-                  const Product = require('./product.model');
-                  <div>module.exports = {</div>
-                  <div style="margin-left: 20px">Product,</div>
-                  };
+                  <div>
+                    const Product = require('./product.model');
+                    <div>module.exports = {</div>
+                    <div style="margin-left: 20px">Product,</div>
+                    };
+                  </div>
                 </div>
+
                 <p>
                   <span style="color: green">Collection name</span> (in example
                   this is model("<b>product</b>", ...) write as a single noun.
@@ -144,7 +151,7 @@
               </li>
               <li style="padding-top: 20px">
                 <b>Connection</b> (binding) between collections has usually
-                making with id. So if we would like to bing product collection
+                making with id. So if we would like to bind product collection
                 with category, we add in schema field like
                 <p
                   class="codepen"
@@ -179,7 +186,7 @@
                 ></script>
                 So HTTP request will be with name, price & <b>categoryID</b>,
                 actually we select one of the existing categories (means user
-                selects in form).
+                selects on form).
                 <div>
                   Check
                   <a target="_blank" href="./postman-request.html"

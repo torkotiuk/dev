@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration, authentication & authorization.</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span
+            ><a href="./express-mongoDb.html"
+              >Back to Express.js + MongoDB &#8678;</a
+            ></span
+          >
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="section">
+            <h1>Registration, authentication & authorization</h1>
+            <div>
+              -
+              <a
+                target="_blank"
+                href="./assets/images/register/1__SaveUserInfo_TOKENtechnique.jpg"
+                >we use TOCKEN technique </a
+              >(means in first time we send login & pass, but next time, after
+              we got token, we only attach tocken and don't need to type login
+              and password every time (for every request))
+            </div>
+            <div>
+              -
+              <a
+                target="_blank"
+                href="./assets/images/register/2__Register_Authinticate_Authorize.jpg"
+                >differences between Registration, authentication &
+                authorization</a
+              >
+            </div>
+            <div>
+              -
+              <a
+                target="_blank"
+                href="./assets/images/register/3__stepsOfLesson.jpg"
+                >TASK what we plan to do</a
+              >
+            </div>
+            <div>
+              -
+              <a
+                target="_blank"
+                href="./assets/images/register/4_use_HASHING_not-encrypting.jpg"
+                >Crypto making & hashing differences</a
+              >
+            </div>
+
+            <p style="text-align: center">REGISTRATION</p>
+            <div>
+              Create
+              <div>
+                -
+                <a
+                  target="_blank"
+                  href="https://codepen.io/imitator/pen/WNaKMdz?editors=0010"
+                  >models\schemas\user.schema.js</a
+                >
+              </div>
+              <div style="padding-left: 20px">& use schema in</div>
+              <div>
+                -
+                <a
+                  target="_blank"
+                  href="https://codepen.io/imitator/pen/QWZBQoZ?editors=0010"
+                >
+                  \models\user.model.js</a
+                >
+              </div>
+              <div>
+                P.S. Remember about
+                <a
+                  style="color: grey"
+                  target="_blank"
+                  href="./express-mongoDB-schema._simplest.html"
+                  >reexports</a
+                >
+                form schemas/index.js and models/index.js
+              </div>
+            </div>
+            <ol>
+              <li>
+                Look at an user existing in DB
+                <ul>
+                  <li>
+                    services\user.services.js
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="QWZBmpP"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/QWZBmpP">
+                          42__getOneUser_service</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    controllers\auth\registerCTRL.js
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="yLRqKoL"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/yLRqKoL">
+                          43__registerCTRL__checkUserExistsInDB</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </main>
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
