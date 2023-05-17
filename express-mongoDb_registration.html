@@ -68,113 +68,299 @@
               >
             </div>
 
-            <p style="text-align: center">REGISTRATION</p>
-            <div>
-              Create
-              <div>
-                -
-                <a
-                  target="_blank"
-                  href="https://codepen.io/imitator/pen/WNaKMdz?editors=0010"
-                  >models\schemas\user.schema.js</a
-                >
-              </div>
-              <div style="padding-left: 20px">& use schema in</div>
-              <div>
-                -
-                <a
-                  target="_blank"
-                  href="https://codepen.io/imitator/pen/QWZBQoZ?editors=0010"
-                >
-                  \models\user.model.js</a
-                >
-              </div>
-              <div>
-                P.S. Remember about
-                <a
-                  style="color: grey"
-                  target="_blank"
-                  href="./express-mongoDB-schema._simplest.html"
-                  >reexports</a
-                >
-                form schemas/index.js and models/index.js
-              </div>
-            </div>
-            <ol>
+            <div style="margin-top: 20px">Prepared instruments:</div>
+            <span
+              >P.S. Take care about understanding user routes and auth routes.
+              Auth routes uses user model, but at the same way the routes are
+              different.</span
+            >
+            <ul style="margin-top: 5px">
               <li>
-                Look at an user existing in DB
-                <ul>
-                  <li>
-                    services\user.services.js
-                    <p
-                      class="codepen"
-                      data-height="300"
-                      data-default-tab="js"
-                      data-slug-hash="QWZBmpP"
-                      data-user="imitator"
-                      style="
-                        height: 300px;
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 2px solid;
-                        margin: 1em 0;
-                        padding: 1em;
-                      "
-                    >
-                      <span
-                        >See the Pen
-                        <a href="https://codepen.io/imitator/pen/QWZBmpP">
-                          42__getOneUser_service</a
-                        >
-                        by Andrii (<a href="https://codepen.io/imitator"
-                          >@imitator</a
-                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                <div>
+                  <div>
+                    <b>Check about existing user schema & model</b>
+                    <div>
+                      -
+                      <a
+                        target="_blank"
+                        href="https://codepen.io/imitator/pen/WNaKMdz?editors=0010"
+                        >models\schemas\user.schema.js</a
                       >
-                    </p>
-                    <script
-                      async
-                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                    ></script>
-                  </li>
-                  <li>
-                    controllers\auth\registerCTRL.js
-                    <p
-                      class="codepen"
-                      data-height="300"
-                      data-default-tab="js"
-                      data-slug-hash="yLRqKoL"
-                      data-user="imitator"
-                      style="
-                        height: 300px;
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 2px solid;
-                        margin: 1em 0;
-                        padding: 1em;
-                      "
-                    >
-                      <span
-                        >See the Pen
-                        <a href="https://codepen.io/imitator/pen/yLRqKoL">
-                          43__registerCTRL__checkUserExistsInDB</a
-                        >
-                        by Andrii (<a href="https://codepen.io/imitator"
-                          >@imitator</a
-                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                    </div>
+                    <div style="padding-left: 20px">& use schema in</div>
+                    <div>
+                      -
+                      <a
+                        target="_blank"
+                        href="https://codepen.io/imitator/pen/QWZBQoZ?editors=0010"
                       >
-                    </p>
-                    <script
-                      async
-                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                    ></script>
-                  </li>
-                </ul>
+                        \models\user.model.js</a
+                      >
+                    </div>
+                    <div>
+                      P.S. Remember about
+                      <a
+                        style="color: grey"
+                        target="_blank"
+                        href="./express-mongoDB-schema._simplest.html"
+                        >reexports</a
+                      >
+                      form schemas/index.js and models/index.js
+                    </div>
+                  </div>
+                </div>
               </li>
-            </ol>
+            </ul>
+
+            <p style="text-align: center; color: rgb(253, 65, 31)">
+              REGISTRATION
+            </p>
+
+            <ul>
+              <li>
+                <b> Add the route</b> for registration
+                <div>routes\auth.routes.js</div>
+                <p
+                  class="codepen"
+                  data-height="240"
+                  data-default-tab="js"
+                  data-slug-hash="dygqgQY"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/dygqgQY">
+                      44__Register-route</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                P.S. Remember about reexport in routes\index.js
+                <div style="padding-left: 20px">
+                  <div>const auth = require('./auth.routes');</div>
+                  <div>module.exports = {auth};</div>
+                </div>
+                <div>
+                  Also remember about route in main server.js (index.js)
+                  <div style="padding-left: 20px">
+                    app.use('/api/v1/auth', routes.auth);
+                  </div>
+                </div>
+              </li>
+              <li>
+                Main steps in register
+                <ol>
+                  <!-- 1 step - Look at an user existing -->
+                  <li>
+                    Look at an user existing in DB
+                    <ul>
+                      <li>
+                        services\user.services.js
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="QWZBmpP"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/QWZBmpP">
+                              42__getOneUser_service</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                        P.S. Remember about reexport from services folder in
+                        services\index.js
+                        <div style="padding-left: 20px">
+                          <div>
+                            const userServices = require('./user.services');
+                          </div>
+                          <div>module.exports = { userServices, };</div>
+                        </div>
+                      </li>
+                      <li>
+                        controllers\auth\registerCTRL.js
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="yLRqKoL"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/yLRqKoL">
+                              43__registerCTRL__checkUserExistsInDB</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                  </li>
+                  <!-- 2 step - Add user -->
+                  <li>
+                    Add user.
+                    <div></div>
+                    <ul>
+                      <li>
+                        services\user.services.js
+                        <div>
+                          There are two ways of using services to add users (USE
+                          ONLY ONE OF THEM). These two ways is making with
+                          hashing password. So install for this
+                          <span style="color: grey">npm i bcryptjs</span>
+                        </div>
+                        <div>
+                          - Way 1: is simplest one - use hashing inside in
+                          service
+
+                          <p
+                            class="codepen"
+                            data-height="300"
+                            data-default-tab="js"
+                            data-slug-hash="OJBoazE"
+                            data-user="imitator"
+                            style="
+                              height: 300px;
+                              box-sizing: border-box;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              border: 2px solid;
+                              margin: 1em 0;
+                              padding: 1em;
+                            "
+                          >
+                            <span
+                              >See the Pen
+                              <a href="https://codepen.io/imitator/pen/OJBoazE">
+                                45__addUserService</a
+                              >
+                              by Andrii (<a href="https://codepen.io/imitator"
+                                >@imitator</a
+                              >) on
+                              <a href="https://codepen.io">CodePen</a>.</span
+                            >
+                          </p>
+                          <script
+                            async
+                            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                          ></script>
+                          P.S. for try this step for first time try to do it
+                          without hashing.
+                        </div>
+                        <div>
+                          - Way 2 -
+                          <a
+                            target="_blank"
+                            href="https://codepen.io/imitator/pen/poxOqaE?editors=0010"
+                            >hash password in separate function</a
+                          >
+
+                          in models\schemas\user.schema.js
+                        </div>
+                        <div>
+                          In this war the
+                          <a
+                            target="_blank"
+                            href="https://codepen.io/imitator/pen/Jjmawvv?editors=0010"
+                            >service will be</a
+                          >
+                        </div>
+                      </li>
+                      <li>
+                        controllers\auth\registerCTRL.js
+                        <p
+                          class="codepen"
+                          data-height="300"
+                          data-default-tab="js"
+                          data-slug-hash="ZEqMmoE"
+                          data-user="imitator"
+                          style="
+                            height: 300px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border: 2px solid;
+                            margin: 1em 0;
+                            padding: 1em;
+                          "
+                        >
+                          <span
+                            >See the Pen
+                            <a href="https://codepen.io/imitator/pen/ZEqMmoE">
+                              46__Register_CTRL__add-user</a
+                            >
+                            by Andrii (<a href="https://codepen.io/imitator"
+                              >@imitator</a
+                            >) on
+                            <a href="https://codepen.io">CodePen</a>.</span
+                          >
+                        </p>
+                        <script
+                          async
+                          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                        ></script>
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+            </ul>
           </section>
         </div>
       </main>
