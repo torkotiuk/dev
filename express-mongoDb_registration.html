@@ -67,12 +67,21 @@
                 >Crypto making & hashing differences</a
               >
             </div>
+            <div>
+              -
+              <a
+                target="_blank"
+                href="./assets/images/register/5_jwt_includes.jpg"
+                >Headers+Payload(often user id)+SecretKey => though JWT.sign
+                method === JWT token</a
+              >
+            </div>
 
             <div style="margin-top: 20px">Prepared instruments:</div>
             <span
               >P.S. Take care about understanding user routes and auth routes.
-              Auth routes uses user model, but at the same way the routes are
-              different.</span
+              Auth routes are using user model, but at the same time the routes
+              are different.</span
             >
             <ul style="margin-top: 5px">
               <li>
@@ -392,7 +401,8 @@
                   (In both ways a business approach used in most of the times,
                   b/c user should think about smth incorrect, he wouldn't be
                   known about what exactly wrong, so we response the general
-                  answer: code: 400, message: `Bad request`,)
+                  answer: code: 400, message: `Bad request`, or message:
+                  `Incorrect password or login`)
                 </div>
                 <div>
                   WAY 1. Existing user & compare password in one place -
@@ -445,6 +455,13 @@
                     comparing password.</a
                   >
                 </div>
+              </li>
+              <li>
+                <b>Generate token and return it in response</b>
+                <ul>
+                  <li>npm i jsonwebtoken</li>
+                  <li>.env - add some kind of SECRET_KEY=someString</li>
+                </ul>
               </li>
             </ul>
           </section>
