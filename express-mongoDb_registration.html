@@ -512,103 +512,20 @@
               him (authorize).
             </p>
 
-            <p>Example in users/profile route</p>
-            <ul>
-              <li>
-                Add new route in routes\<b>users.routes.js</b>
-                <div>router.get('/profile', ctrl.getUserProfileCTRL);</div>
-                <div style="color: grey">
-                  http://localhost:5555/api/v1/users/profile
-                </div>
-                <div style="color: grey">
-                  Remember, that in POSTMAN we add token to "Authorization" TAB
-                  > Type(Bearer Token)
-                </div>
-                <p
-                  class="codepen"
-                  data-height="300"
-                  data-default-tab="js"
-                  data-slug-hash="WNaYBeN"
-                  data-user="imitator"
-                  style="
-                    height: 300px;
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 2px solid;
-                    margin: 1em 0;
-                    padding: 1em;
-                  "
-                >
-                  <span
-                    >See the Pen
-                    <a href="https://codepen.io/imitator/pen/WNaYBeN">
-                      53__userProfile route</a
-                    >
-                    by Andrii (<a href="https://codepen.io/imitator"
-                      >@imitator</a
-                    >) on <a href="https://codepen.io">CodePen</a>.</span
-                  >
-                </p>
-                <script
-                  async
-                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                ></script>
-              </li>
-              <li>
-                Add verification technique for users/profile route in
-                <b
-                  >controllers\users\<span style="color: red"
-                    >getUserProfileCTRL.js</span
-                  ></b
-                >
-                <p
-                  class="codepen"
-                  data-height="300"
-                  data-default-tab="js"
-                  data-slug-hash="YzJRbzO"
-                  data-user="imitator"
-                  style="
-                    height: 300px;
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: 2px solid;
-                    margin: 1em 0;
-                    padding: 1em;
-                  "
-                >
-                  <span
-                    >See the Pen
-                    <a href="https://codepen.io/imitator/pen/YzJRbzO">
-                      54__getUserProfileCTRL__verifyProcess</a
-                    >
-                    by Andrii (<a href="https://codepen.io/imitator"
-                      >@imitator</a
-                    >) on <a href="https://codepen.io">CodePen</a>.</span
-                  >
-                </p>
-                <script
-                  async
-                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                ></script>
-                <span style="color: red"
-                  >So in this example explains that we have to use all these
-                  steps for every route, that user has an access:</span
-                >
-                <ul>
-                  <li>const jwt = require('jsonwebtoken');</li>
-                  <li>require('dotenv').config;</li>
-                  <li>const { authorization } = req.headers;</li>
-                  <li>const [, token] = authorization.split(' ');</li>
-                  <li>const { SECRET_KEY } = process.env;</li>
-                  <li>const { id } = jwt.verify(token, SECRET_KEY);</li>
-                </ul>
-              </li>
-            </ul>
+            <p>
+              <span>Example in users/profile route</span>
+              (<a
+                target="_blank"
+                href="./express-mongoDb_registration_jwt-verify__simplest.html"
+                >Authorization simplest - used in every CTRL</a
+              >)
+            </p>
           </section>
+
+          <b>Passport + passport-jwt authorization</b>
+          <ul>
+            <li>npm i passport passport-jwt</li>
+          </ul>
         </div>
       </main>
       <footer><div class="container">Footer</div></footer>
