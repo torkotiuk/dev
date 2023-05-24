@@ -509,17 +509,19 @@
             <p>
               The whole this page is designed to use token technique for all
               users routes. So if user want to get some route, we have to verify
-              him (authorize).
+              him (authorize): means to verify token and give information about
+              necessary route without login step.
             </p>
-
-            <p>
-              <span>Example in users/profile route</span>
-              (<a
+            <div>
+              In login step we used jwt.sign() method to generate token, so we
+              also may use jwt.verify() method to this step (authorization)
+              (<span>Example in users/profile route</span> (<a
                 target="_blank"
                 href="./express-mongoDb_registration_jwt-verify__simplest.html"
                 >Authorization simplest - used in every CTRL</a
-              >)
-            </p>
+              >)), but it is really simplest method one, & in practice often use
+              passport + passport-jwt methods for verifying token.
+            </div>
           </section>
 
           <b>Passport + passport-jwt authorization</b>
