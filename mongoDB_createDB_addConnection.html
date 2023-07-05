@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create DB and take connection</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span>Header</span>
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="section">
+          <div class="container">
+            <h1>Create DB and take connection</h1>
+            <ul>
+              <li>
+                Create db with first collection in <b>www.mongodb.com</b>
+                <ul>
+                  <li>
+                    Go to
+                    <a target="_blank" href="https://www.mongodb.com/"
+                      >MongoDB</a
+                    >
+                  </li>
+                  <li>Choose your project</li>
+                  <li>Click the link of entering the project</li>
+                  <li>Go to Collections tab</li>
+                  <li>Push the "+ Create Database" button</li>
+                  <li>
+                    Type "Database name" & "<b style="color: green"
+                      >Collection name</b
+                    >" and push the "Create" button
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Add connection link to <b>.env</b> like
+                <b>DB_HOST</b>=..mongodb.net/<b style="color: green"
+                  >mydatabase</b
+                >?retryWrites..
+                <ul>
+                  <li>
+                    Go to
+                    <a target="_blank" href="https://www.mongodb.com/"
+                      >MongoDB</a
+                    >
+                  </li>
+                  <li>Choose your project</li>
+                  <li>Push the <span>Connect</span> button</li>
+                  <li>
+                    Push in "Connect to your application" tab the
+                    <b>Drivers</b> button
+                  </li>
+                  <li>
+                    Copy necessary link and change there password and name of DB
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
