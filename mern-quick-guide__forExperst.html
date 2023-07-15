@@ -433,12 +433,181 @@
                 (means like Model.create(), Model.find()) to separate folder,
                 called services in root of a project.
                 <ul>
-                  <li><b>Create services/products/addProductSRV.js</b></li>
+                  <li>
+                    <b>Create services/products/addProductSRV.js</b>
+                    <p
+                      class="codepen"
+                      data-height="240"
+                      data-default-tab="js"
+                      data-slug-hash="poQLJdW"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/poQLJdW">
+                          60__srv_addItem</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    Reexport functions from services folder by making
+                    services/products/index.js file
+                    <ul>
+                      <li>
+                        <b>services/products/index.js</b>
+                        <p>
+                          const addProductSRV = require('./addProductSRV');
+                          <span style="display: block"
+                            >module.exports = {addProductSRV};</span
+                          >
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Import all product services from services/products folder to
+                    services/index.js
+                    <ul>
+                      <li>
+                        <b>services/index.js</b>
+                        <p>
+                          const productServices = require('./products');
+                          <span style="display: block"
+                            >module.exports = { productServices };</span
+                          >
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Refactor <b>controllers/products/addProductCTRL.js</b>
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="xxQWGzM"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/xxQWGzM">
+                          61__refactored addProductCTRL due to services</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
                 </ul>
               </li>
               <li style="margin-top: 10px">
                 Refactor getAllProductsCTRL.js to the new organize folders
                 (means servers)
+
+                <ul>
+                  <li>
+                    Create <b>servers/products/getAllProductsSRV.js</b>
+                    <p
+                      class="codepen"
+                      data-height="240"
+                      data-default-tab="js"
+                      data-slug-hash="BaGrNbW"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/BaGrNbW">
+                          63__getAllProductsSRV</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    p.s. Remember about reexports
+                  </li>
+                  <li>
+                    Refactor <b>getAllProductsCTRL.js</b>
+                    <p
+                      class="codepen"
+                      data-height="400"
+                      data-default-tab="js"
+                      data-slug-hash="yLQKNGK"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/yLQKNGK">
+                          62__getAllProductsSRV</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
               </li>
             </ol>
           </div>
