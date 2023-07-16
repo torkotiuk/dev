@@ -274,11 +274,13 @@
                             >const router = express.Router();
                           </span>
                           <span style="display: block"
-                            >const { productsControllers: <b>ctrl</b> } =
-                            require('../controllers');
+                            ><b
+                              >const { productsControllers: ctrl } =
+                              require('../controllers');</b
+                            >
                           </span>
                           <span style="display: block"
-                            >router.get('/', <b>ctrl</b>.getAllProductsCTRL);
+                            ><b>router.get('/', ctrl.getAllProductsCTRL);</b>
                           </span>
                           module.exports = router;
                         </p>
@@ -336,6 +338,8 @@
                 >
                 in this step.
               </li>
+
+              <!-- 11. Make the simplest Schema -->
               <li style="margin-top: 10px">
                 Make the
                 <a
@@ -348,6 +352,8 @@
                 <a href="./express-mongoDB-schema.html">MongoDb Schema</a>
                 for making a usual projects one).
               </li>
+
+              <!-- 12. POST -->
               <li
                 style="
                   background-color: rgb(251, 255, 220);
@@ -427,6 +433,8 @@
                   </li>
                 </ul>
               </li>
+
+              <!-- 13. Create services -->
               <li style="margin-top: 10px">
                 The next step of creating a convenient web-server project is
                 separating transferring information to mongoDB from controllers
@@ -533,13 +541,20 @@
                   </li>
                 </ul>
               </li>
+
+              <!-- 14. Refactor getAllProductsCTRL.js -->
               <li style="margin-top: 10px">
                 Refactor getAllProductsCTRL.js to the new organize folders
                 (means servers)
 
                 <ul>
                   <li>
-                    Create <b>servers/products/getAllProductsSRV.js</b>
+                    Create
+                    <b
+                      >services/products/getAllProducts<span style="color: red"
+                        >SRV</span
+                      >.js</b
+                    >
                     <p
                       class="codepen"
                       data-height="240"
@@ -574,7 +589,11 @@
                     p.s. Remember about reexports
                   </li>
                   <li>
-                    Refactor <b>getAllProductsCTRL.js</b>
+                    Refactor
+                    <b
+                      >getAllProducts<span style="color: green">CTRL</span
+                      >.js</b
+                    >
                     <p
                       class="codepen"
                       data-height="400"
@@ -608,6 +627,108 @@
                     ></script>
                   </li>
                 </ul>
+              </li>
+
+              <!-- 15. getItemById -->
+              <li style="margin-top: 10px">
+                <span
+                  style="
+                    padding: 5px;
+                    font-weight: bold;
+                    color: white;
+                    background-color: #1391ff;
+                  "
+                  >GET</span
+                >
+                Create getProductById
+
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <ul>
+                  <li>
+                    Create
+                    <b
+                      >services/products/getProductById<span style="color: red"
+                        >SRV</span
+                      >.js</b
+                    >
+                    <p
+                      class="codepen"
+                      data-height="360"
+                      data-default-tab="js"
+                      data-slug-hash="oNQqWWm"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/oNQqWWm">
+                          64__getProductByIdSRV</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    p.s. Remember about reexports
+                  </li>
+                  <li>
+                    Create
+                    <b
+                      >getProductById<span style="color: green">CTRL</span
+                      >.js</b
+                    >
+                    <p
+                      class="codepen"
+                      data-height="620"
+                      data-default-tab="js"
+                      data-slug-hash="rNQdmwJ"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/rNQdmwJ">
+                          65__getProductByIdCTRL</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    p.s. Remember about reexports
+                  </li>
+                </ul>
+                <!--  -->
+                <!--  -->
+                <!--  -->
               </li>
             </ol>
           </div>
