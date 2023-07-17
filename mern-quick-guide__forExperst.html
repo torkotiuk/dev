@@ -123,7 +123,7 @@
                     <span style="color: green"
                       ><b>routes/products.routes.js</b></span
                     >
-                    for making routes for products endpoint
+                    for making routes for product endpoints
                     <p
                       class="codepen"
                       data-height="340"
@@ -641,10 +641,6 @@
                   >GET</span
                 >
                 Create getProductById
-
-                <!--  -->
-                <!--  -->
-                <!--  -->
                 <ul>
                   <li>
                     Create
@@ -723,12 +719,272 @@
                       async
                       src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                     ></script>
-                    p.s. Remember about reexports
                   </li>
+                  <li>
+                    <div>Add route to</div>
+                    <ul>
+                      <li>
+                        routes\products.routes.js
+                        <div>
+                          <b>router.get('/:id', ctrl.getProductByIdCTRL);</b>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>p.s. Remember about reexports</li>
                 </ul>
-                <!--  -->
-                <!--  -->
-                <!--  -->
+              </li>
+
+              <!-- 16. PUT -->
+              <li style="margin-top: 10px">
+                <span
+                  style="
+                    padding: 5px;
+                    font-weight: bold;
+                    color: white;
+                    background-color: #e97500;
+                  "
+                  >PUT</span
+                >
+                <ul>
+                  <li>
+                    Create
+                    <b
+                      >services/products/updateProduct<span style="color: red"
+                        >SRV</span
+                      >.js</b
+                    >
+                    <p
+                      class="codepen"
+                      data-height="360"
+                      data-default-tab="js"
+                      data-slug-hash="jOQzdKm"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/jOQzdKm">
+                          66__updateProductSRV</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    Create
+                    <b
+                      >updateProduct<span style="color: green">CTRL</span>.js</b
+                    >
+                    <p
+                      class="codepen"
+                      data-height="560"
+                      data-default-tab="js"
+                      data-slug-hash="abQYXRR"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/abQYXRR">
+                          67__updateProductCTRL</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    <div>Add route to</div>
+                    <ul>
+                      <li>
+                        routes\products.routes.js
+                        <div>
+                          <b>router.put('/:id', ctrl.updateProductCTRL);</b>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>p.s. Remember about reexports</li>
+                </ul>
+              </li>
+
+              <!-- 17. DELETE -->
+              <li style="margin-top: 10px">
+                <span
+                  style="
+                    padding: 5px;
+                    font-weight: bold;
+                    color: white;
+                    background-color: #cf3030;
+                  "
+                  >DELETE</span
+                >
+                <ul>
+                  <li>
+                    Create
+                    <b
+                      >services/products/deleteProduct<span style="color: red"
+                        >SRV</span
+                      >.js</b
+                    >
+                    <p
+                      class="codepen"
+                      data-height="300"
+                      data-default-tab="js"
+                      data-slug-hash="qBQogvv"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/qBQogvv">
+                          68__</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    Create
+                    <b
+                      >deleteProduct<span style="color: green">CTRL</span>.js</b
+                    >
+                    <p
+                      class="codepen"
+                      data-height="600"
+                      data-default-tab="js"
+                      data-slug-hash="XWyEOwP"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/XWyEOwP">
+                          69__</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                  <li>
+                    <div>Add route to</div>
+                    <ul>
+                      <li>
+                        routes\products.routes.js
+                        <div>
+                          <b>router.delete('/:id', ctrl.deleteProductCTRL);</b>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>p.s. Remember about reexports</li>
+                </ul>
+              </li>
+
+              <!-- 18. "Not Found" middleware -->
+              <li style="margin-top: 10px">
+                Add
+                <a target="_blank" href="./express__NotFoundRoute.html"
+                  >"Not Found"</a
+                >
+                middleware for looking unexpected route after all middlewares.
+              </li>
+
+              <!-- 19. User SCHEMA & MODEL -->
+              <li style="margin-top: 10px">
+                <div>
+                  <div>
+                    <b>Create user schema & model</b>
+                    <div>
+                      -
+                      <a
+                        target="_blank"
+                        href="https://codepen.io/imitator/pen/WNaKMdz?editors=0010"
+                        >models\schemas\user.schema.js</a
+                      >
+                    </div>
+                    <div style="padding-left: 20px">& use schema in</div>
+                    <div>
+                      -
+                      <a
+                        target="_blank"
+                        href="https://codepen.io/imitator/pen/QWZBQoZ?editors=0010"
+                      >
+                        \models\user.model.js</a
+                      >
+                    </div>
+                    <div>
+                      P.S. Remember about
+                      <a
+                        style="color: grey"
+                        target="_blank"
+                        href="./express-mongoDB-schema._simplest.html"
+                        >reexports</a
+                      >
+                      form schemas/index.js and models/index.js
+                    </div>
+                  </div>
+                </div>
               </li>
             </ol>
           </div>
