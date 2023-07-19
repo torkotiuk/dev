@@ -33,10 +33,10 @@
             <ol>
               <li><b>npm init -y</b></li>
               <li>
-                Copy from any repo
+                Create in root of the proj
                 <a
                   target="_blank"
-                  href="https://github.com/torkotiuk?tab=repositories"
+                  href="https://codepen.io/imitator/pen/Poxeamr?editors=0010"
                   >.prettierrc.json</a
                 >
               </li>
@@ -64,6 +64,22 @@
                       >)
                     </div>
                   </li>
+                </ul>
+              </li>
+
+              <!-- .gitignore -->
+              <li>
+                Before pushing the initial repository to the github remember
+                about adding <b>.gitignore</b> to the project including in the
+                beginning
+                <ul>
+                  <li>
+                    <div>node_modules/</div>
+                  </li>
+                  <li>
+                    <div>.env</div>
+                  </li>
+                  <li><div>package-lock.json</div></li>
                 </ul>
               </li>
               <li>
@@ -297,6 +313,8 @@
                   </li>
                 </ul>
               </li>
+
+              <!-- Add mongoDB connection code -->
               <li style="margin-top: 10px">
                 Add mongoDB connection code to app.js
                 <p
@@ -337,6 +355,16 @@
                   >refactored app.js</a
                 >
                 in this step.
+                <p style="color: red">
+                  You may miss steps before taking
+                  <a
+                    target="_blank"
+                    href="https://github.com/torkotiuk/be-structure"
+                    ><b>repo</b></a
+                  >
+                  with all structure, REMEMBER to check .env for existing PORT=,
+                  DB_HOST=
+                </p>
               </li>
 
               <!-- 11. Make the simplest Schema -->
@@ -986,6 +1014,255 @@
                   </div>
                 </div>
               </li>
+
+              <!-- 20. User REGISTRATION -->
+              <!--  -->
+              <li style="background-color: #fcdbdb">
+                <p style="text-align: center; color: rgb(253, 65, 31)">
+                  User REGISTRATION
+                </p>
+                <ul>
+                  <li>
+                    <b> Add the route</b> for registration
+                    <div>
+                      routes\<span style="color: green">auth.routes.js</span>
+                    </div>
+                    <p
+                      class="codepen"
+                      data-height="240"
+                      data-default-tab="js"
+                      data-slug-hash="dygqgQY"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/dygqgQY">
+                          44__Register-route</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                    P.S. Remember about reexport in routes\index.js
+                  </li>
+                  <li>
+                    <div>
+                      Use auth routes <b>in app.js</b>
+                      <div style="padding-left: 20px">
+                        app.use('/api/v1/auth', routes.auth);
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    Main 2 steps in register
+                    <ol>
+                      <!-- 1 step - Look at an user existing -->
+                      <li>
+                        <b>Look at an user existing</b> in DB
+                        <ul>
+                          <li>
+                            services\users\<b style="color: green"
+                              >findUserSRV.js</b
+                            >
+
+                            <p
+                              class="codepen"
+                              data-height="240"
+                              data-default-tab="js"
+                              data-slug-hash="zYMjaqz"
+                              data-user="imitator"
+                              style="
+                                height: 300px;
+                                box-sizing: border-box;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 2px solid;
+                                margin: 1em 0;
+                                padding: 1em;
+                              "
+                            >
+                              <span
+                                >See the Pen
+                                <a
+                                  href="https://codepen.io/imitator/pen/zYMjaqz"
+                                >
+                                  70__findUser.js</a
+                                >
+                                by Andrii (<a href="https://codepen.io/imitator"
+                                  >@imitator</a
+                                >) on
+                                <a href="https://codepen.io">CodePen</a>.</span
+                              >
+                            </p>
+                            <script
+                              async
+                              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                            ></script>
+                            P.S. Remember about reexport from
+                            services\users\index.js
+                            <div style="padding-left: 20px">
+                              <div>
+                                const findUser = require('./findUserSRV');
+                              </div>
+                              <div>module.exports = { findUser };</div>
+                            </div>
+                            And from services\index.js
+                          </li>
+                          <li>
+                            controllers\auth\<b style="color: red"
+                              >registerCTRL.js</b
+                            >
+                            <p
+                              class="codepen"
+                              data-height="620"
+                              data-default-tab="js"
+                              data-slug-hash="OJaZEXY"
+                              data-user="imitator"
+                              style="
+                                height: 300px;
+                                box-sizing: border-box;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 2px solid;
+                                margin: 1em 0;
+                                padding: 1em;
+                              "
+                            >
+                              <span
+                                >See the Pen
+                                <a
+                                  href="https://codepen.io/imitator/pen/OJaZEXY"
+                                >
+                                  71__</a
+                                >
+                                by Andrii (<a href="https://codepen.io/imitator"
+                                  >@imitator</a
+                                >) on
+                                <a href="https://codepen.io">CodePen</a>.</span
+                              >
+                            </p>
+                            <script
+                              async
+                              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                            ></script>
+                          </li>
+                        </ul>
+                      </li>
+                      <!-- 2 step - Add user -->
+                      <li>
+                        <b>Add user.</b>
+                        <div></div>
+                        <ul>
+                          <li>
+                            <span style="color: grey">npm i bcryptjs</span>
+                          </li>
+                          <li>
+                            services\users\<b style="color: green"
+                              >addUserSRV.js</b
+                            >
+
+                            <div style="padding: 10px">
+                              <p
+                                class="codepen"
+                                data-height="300"
+                                data-default-tab="js"
+                                data-slug-hash="GRwdGje"
+                                data-user="imitator"
+                                style="
+                                  height: 300px;
+                                  box-sizing: border-box;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                  border: 2px solid;
+                                  margin: 1em 0;
+                                  padding: 1em;
+                                "
+                              >
+                                <span
+                                  >See the Pen
+                                  <a
+                                    href="https://codepen.io/imitator/pen/GRwdGje"
+                                  >
+                                    72__</a
+                                  >
+                                  by Andrii (<a
+                                    href="https://codepen.io/imitator"
+                                    >@imitator</a
+                                  >) on
+                                  <a href="https://codepen.io">CodePen</a
+                                  >.</span
+                                >
+                              </p>
+                              <script
+                                async
+                                src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                              ></script>
+                            </div>
+                          </li>
+                          <li>
+                            controllers\auth\<b style="color: red"
+                              >registerCTRL.js</b
+                            >
+                            <p
+                              class="codepen"
+                              data-height="680"
+                              data-default-tab="js"
+                              data-slug-hash="ZEqMmoE"
+                              data-user="imitator"
+                              style="
+                                height: 300px;
+                                box-sizing: border-box;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 2px solid;
+                                margin: 1em 0;
+                                padding: 1em;
+                              "
+                            >
+                              <span
+                                >See the Pen
+                                <a
+                                  href="https://codepen.io/imitator/pen/ZEqMmoE"
+                                >
+                                  46__Register_CTRL__add-user</a
+                                >
+                                by Andrii (<a href="https://codepen.io/imitator"
+                                  >@imitator</a
+                                >) on
+                                <a href="https://codepen.io">CodePen</a>.</span
+                              >
+                            </p>
+                            <script
+                              async
+                              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                            ></script>
+                          </li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
+              </li>
+              <!--  -->
             </ol>
           </div>
         </section>
