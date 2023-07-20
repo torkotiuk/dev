@@ -1027,59 +1027,11 @@
               </li>
 
               <!-- 20. User REGISTRATION -->
-              <!--  -->
               <li style="background-color: #fcdbdb">
                 <p style="text-align: center; color: rgb(253, 65, 31)">
                   User REGISTRATION
                 </p>
                 <ul>
-                  <li>
-                    <b> Add the route</b> for registration
-                    <div>
-                      routes\<span style="color: green">auth.routes.js</span>
-                    </div>
-                    <p
-                      class="codepen"
-                      data-height="240"
-                      data-default-tab="js"
-                      data-slug-hash="dygqgQY"
-                      data-user="imitator"
-                      style="
-                        height: 300px;
-                        box-sizing: border-box;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        border: 2px solid;
-                        margin: 1em 0;
-                        padding: 1em;
-                      "
-                    >
-                      <span
-                        >See the Pen
-                        <a href="https://codepen.io/imitator/pen/dygqgQY">
-                          44__Register-route</a
-                        >
-                        by Andrii (<a href="https://codepen.io/imitator"
-                          >@imitator</a
-                        >) on <a href="https://codepen.io">CodePen</a>.</span
-                      >
-                    </p>
-                    <script
-                      async
-                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                    ></script>
-                    P.S. Remember about reexport in routes\index.js
-                    <div>const auth = require('./auth.routes');</div>
-                  </li>
-                  <li>
-                    <div>
-                      Use auth routes <b>in app.js</b>
-                      <div style="padding-left: 20px">
-                        app.use('/api/v1/auth', routes.auth);
-                      </div>
-                    </div>
-                  </li>
                   <li>
                     Main 2 steps in register
                     <ol>
@@ -1135,6 +1087,9 @@
                               <div>module.exports = { findUser };</div>
                             </div>
                             And from services\index.js
+                            <div style="padding-left: 20px">
+                              const userServices = require('./users');
+                            </div>
                           </li>
                           <li>
                             controllers\auth\<b style="color: red"
@@ -1174,6 +1129,92 @@
                               async
                               src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                             ></script>
+                            Remember about reexports form
+                            <ul>
+                              <li>
+                                controllers\auth\index.js
+                                <div style="padding-left: 20px">
+                                  <div>
+                                    const registerCTRL =
+                                    require('./registerCTRL');
+                                    <div>
+                                      module.exports = { registerCTRL };
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                controllers\index.js
+                                <div style="padding-left: 20px">
+                                  const authControllers = require('./auth');
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <b> Add the route</b> for registration
+                            <div>
+                              routes\<span style="color: green"
+                                >auth.routes.js</span
+                              >
+                            </div>
+                            <p
+                              class="codepen"
+                              data-height="240"
+                              data-default-tab="js"
+                              data-slug-hash="dygqgQY"
+                              data-user="imitator"
+                              style="
+                                height: 300px;
+                                box-sizing: border-box;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 2px solid;
+                                margin: 1em 0;
+                                padding: 1em;
+                              "
+                            >
+                              <span
+                                >See the Pen
+                                <a
+                                  href="https://codepen.io/imitator/pen/dygqgQY"
+                                >
+                                  44__Register-route</a
+                                >
+                                by Andrii (<a href="https://codepen.io/imitator"
+                                  >@imitator</a
+                                >) on
+                                <a href="https://codepen.io">CodePen</a>.</span
+                              >
+                            </p>
+                            <script
+                              async
+                              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                            ></script>
+                            P.S. Remember about reexport in routes\index.js
+                            <div>const auth = require('./auth.routes');</div>
+                          </li>
+                          <li>
+                            <div>
+                              Use auth routes <b>in app.js</b>
+                              <div style="padding-left: 20px">
+                                app.use('/api/v1/auth', routes.auth);
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            Make necessary post request to
+                            http://localhost:5555/api/v1/auth/register with
+                            email & password fields for checking temporary
+                            response:
+                            <div>
+                              <span style="text-decoration: underline"
+                                >message:</span
+                              >
+                              'Everything is ok, delete this if(){} before next
+                              step',
+                            </div>
                           </li>
                         </ul>
                       </li>
@@ -1274,7 +1315,115 @@
                   </li>
                 </ul>
               </li>
-              <!--  -->
+
+              <!-- User LOGIN -->
+              <li
+                style="margin-top: 10px; background-color: rgb(205, 252, 199)"
+              >
+                <div>
+                  <p style="text-align: center; color: rgb(253, 65, 31)">
+                    LOGIN <span style="color: grey">(authentication)</span>
+                  </p>
+
+                  <ul>
+                    <li>
+                      <b>Look at an user exists</b> in DB
+                      <b>and compare password</b> at the same time .
+
+                      <div>
+                        controllers\auth\<b style="color: red">loginCTRL.js</b>
+                      </div>
+                      <p
+                        class="codepen"
+                        data-height="560"
+                        data-default-tab="js"
+                        data-slug-hash="BaGVqaG"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/BaGVqaG">
+                            73_</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                      P.S. But if business give us task to write all answers, we
+                      should do it like
+                      <a
+                        target="_blank"
+                        href="https://codepen.io/imitator/pen/oNaaWqK?editors=0010"
+                        >this code</a
+                      >
+                    </li>
+                    <li>
+                      <b> Add the route</b> for login
+                      <div>routes\auth.routes.js</div>
+                      <div class="code">
+                        router.post('/login', ctrl.loginCTRL);
+                      </div>
+                      And check request http://localhost:5555/api/v1/auth/login
+                    </li>
+                    <li>
+                      <b>Generate token and return it in response</b>
+                      <ul>
+                        <li>npm i jsonwebtoken</li>
+                        <li>.env - add some kind of SECRET_KEY=someString</li>
+                        <li>
+                          <p
+                            class="codepen"
+                            data-height="800"
+                            data-default-tab="js"
+                            data-slug-hash="wvQXYBN"
+                            data-user="imitator"
+                            style="
+                              height: 300px;
+                              box-sizing: border-box;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                              border: 2px solid;
+                              margin: 1em 0;
+                              padding: 1em;
+                            "
+                          >
+                            <span
+                              >See the Pen
+                              <a href="https://codepen.io/imitator/pen/wvQXYBN">
+                                74__</a
+                              >
+                              by Andrii (<a href="https://codepen.io/imitator"
+                                >@imitator</a
+                              >) on
+                              <a href="https://codepen.io">CodePen</a>.</span
+                            >
+                          </p>
+                          <script
+                            async
+                            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                          ></script>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </li>
             </ol>
           </div>
         </section>
