@@ -1313,6 +1313,11 @@
                               async
                               src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                             ></script>
+                            P.S. Make request to
+                            <div style="margin-left: 20px">
+                              http://localhost:5555/api/v1/auth/register
+                            </div>
+                            one more time for user register.
                           </li>
                         </ul>
                       </li>
@@ -1369,6 +1374,10 @@
                         async
                         src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                       ></script>
+                      <div>
+                        P.S. Remember about reexport in
+                        controllers\auth\index.js
+                      </div>
                       P.S. But if business give us task to write all answers, we
                       should do it like
                       <a
@@ -1383,7 +1392,11 @@
                       <div class="code">
                         router.post('/login', ctrl.loginCTRL);
                       </div>
-                      And check request http://localhost:5555/api/v1/auth/login
+                      And check request
+                      <div style="margin-left: 20px">
+                        http://localhost:5555/api/v1/auth/login
+                      </div>
+                      with necessary login and password
                     </li>
                     <li>
                       <b>Generate token and return it in response</b>
@@ -1425,6 +1438,18 @@
                           ></script>
                         </li>
                       </ul>
+
+                      <p style="color: red">
+                        You may miss steps before taking
+                        <a
+                          target="_blank"
+                          href="https://github.com/torkotiuk/be-structure/tree/2_register_login"
+                          ><b>repo (branch "2_register_login")</b></a
+                        >
+                        with all structure, REMEMBER to check .env for existing
+                        PORT=, DB_HOST=, SECRET_KEY=, and make in terminal
+                        <b>npm i</b>
+                      </p>
                     </li>
                   </ul>
                 </div>
