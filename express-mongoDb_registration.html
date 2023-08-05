@@ -522,12 +522,219 @@
               >)), but it is really simplest method one, & in practice often use
               passport + passport-jwt methods for verifying token.
             </div>
+            <div>Passport is like a middleman between application and some strategy, in our case is jwt-strategy.</div>
+            <div><a target="_blank" href="./assets/images/authorization/1_main_passport_technique.jpg">Passport schema.</a></div>
           </section>
 
           <b>Passport + passport-jwt authorization</b>
           <ul>
             <li>npm i passport passport-jwt</li>
           </ul>
+
+          <ul>
+            <li>
+              <p>
+                We show two ways of using authorization via passport +
+                passport-jwt, for testing them add
+              </p>
+              <ul>
+                <li>
+                  <p>controllers\users\getUserProfileCTRL.js</p>
+                  <p
+                    class="codepen"
+                    data-height="400"
+                    data-default-tab="js"
+                    data-slug-hash="QWJomEQ"
+                    data-user="imitator"
+                    style="
+                      height: 300px;
+                      box-sizing: border-box;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      border: 2px solid;
+                      margin: 1em 0;
+                      padding: 1em;
+                    "
+                  >
+                    <span
+                      >See the Pen
+                      <a href="https://codepen.io/imitator/pen/QWJomEQ">
+                        75_getUserProfileCTRL</a
+                      >
+                      by Andrii (<a href="https://codepen.io/imitator"
+                        >@imitator</a
+                      >) on <a href="https://codepen.io">CodePen</a>.</span
+                    >
+                  </p>
+                  <script
+                    async
+                    src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                  ></script>
+                </li>
+                <li>
+                  <p>routes\users.routes.js</p>
+                  <ul>
+                    <li>
+                      <div>
+                        router.get('/profile', ctrl.getUserProfileCTRL);
+                        <p>
+                          P.S. Take care about a place for this route, maybe it
+                          needs to place it before UPDATE, DELETE and getById
+                          routes.
+                        </p>
+                        <p>
+                          To check correct controller work comment the field
+                          "data {}" in answer and make request to
+                          http://localhost:5555/api/v1/users/profile
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div>
+                Create passport config in
+                <ul>
+                  <li><p>settings\passport-config.js</p></li>
+                </ul>
+              </div>
+              <p
+                class="codepen"
+                data-height="720"
+                data-default-tab="js"
+                data-slug-hash="dyQrmQO"
+                data-user="imitator"
+                style="
+                  height: 300px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 2px solid;
+                  margin: 1em 0;
+                  padding: 1em;
+                "
+              >
+                <span
+                  >See the Pen
+                  <a href="https://codepen.io/imitator/pen/dyQrmQO"> 76__</a> by
+                  Andrii (<a href="https://codepen.io/imitator">@imitator</a>)
+                  on <a href="https://codepen.io">CodePen</a>.</span
+                >
+              </p>
+              <script
+                async
+                src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+              ></script>
+              <ul>
+                <li>
+                  <p>And import them to app.js</p>
+                  <p>require('./settings/passport-config');</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <ol>
+            <li>
+              <p>
+                <b
+                  >Automatically "Unauthorized" response & minimum settings in
+                  <span>passport.authenticate() method</span></b
+                >
+              </p>
+              <ul>
+                <li>
+                  Add directly to users.routes.js middleware
+                  <div>
+                    <p>
+                      <div>const passport = require('passport');</div>
+                      router.get('/profile',
+                      <b>passport.authenticate('jwt', { session: false }),</b>
+                      ctrl.getUserProfileCTRL);
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <b
+                  >Write callback for
+                  <span>passport.authenticate() method</span> and write
+                  "Unauthorized" response by hand</b
+                >
+              </p>
+              So in this case all control with request and sending user (add
+              "user" obj to "req" obj)
+
+              <p>req.user = user;</p>
+
+              to a next middleware we should make ourself
+              <ul>
+                <li>
+                  <p>Create middleware in middlewares\authMDW.js</p>
+                  <p
+                    class="codepen"
+                    data-height="500"
+                    data-default-tab="js"
+                    data-slug-hash="GRwexay"
+                    data-user="imitator"
+                    style="
+                      height: 300px;
+                      box-sizing: border-box;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      border: 2px solid;
+                      margin: 1em 0;
+                      padding: 1em;
+                    "
+                  >
+                    <span
+                      >See the Pen
+                      <a href="https://codepen.io/imitator/pen/GRwexay">
+                        77__passport.authenticate__middleware</a
+                      >
+                      by Andrii (<a href="https://codepen.io/imitator"
+                        >@imitator</a
+                      >) on <a href="https://codepen.io">CodePen</a>.</span
+                    >
+                  </p>
+                  <script
+                    async
+                    src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                  ></script>
+                </li>
+                <li>
+                  <p>P.S. Reexport in middlewares\index.js</p>
+                  <div style="margin-left: 20px">
+                    const authMDW = require('./authMDW');
+                    <p></p>
+                    <div>module.exports = {</div>
+                    <div style="margin-left: 20px">authMdw,</div>
+                    <div>};</div>
+                  </div>
+                </li>
+                <li>
+                  Use middleware for /profile route in routes\users.routes.js
+                  <ul>
+                    <li style="padding: 15px">
+                      <div>const { authMDW } = require('../middlewares');</div>
+                      <div>
+                        router.get('/profile', <b>authMDW,</b>
+                        ctrl.getUserProfileCTRL);
+                      </div>
+                      <p>P.S. Remember to uncomment data {} in getUserProfileCTRL</p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ol>
         </div>
       </main>
       <footer><div class="container">Footer</div></footer>
