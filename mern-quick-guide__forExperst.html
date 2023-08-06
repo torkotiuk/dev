@@ -31,7 +31,10 @@
             <h1>MERN - quick guide (for experts)</h1>
 
             <ol>
+              <!--  -->
               <li><b>npm init -y</b></li>
+
+              <!--  -->
               <li>
                 Create in root of the proj
                 <a
@@ -40,16 +43,24 @@
                   >.prettierrc.json</a
                 >
               </li>
+
+              <!--  -->
               <li>
                 Add script --- <b>"start:dev": "nodemon app.js"</b> --- to
                 package.json for starting backend
               </li>
+
+              <!--  -->
               <li>create <b>app.js</b></li>
+
+              <!--  -->
               <li>
                 <div><b>npm i express cors dotenv mongoose</b></div>
                 and
                 <div><b>npm i nodemon -D</b></div>
               </li>
+
+              <!-- .env -->
               <li>
                 Add <b>.env</b> file in root of project with necessary
                 <ul>
@@ -82,6 +93,8 @@
                   <li><div>package-lock.json</div></li>
                 </ul>
               </li>
+
+              <!-- app.js -->
               <li>
                 Add to <b>app.js</b> simplest express backend server by
                 <p
@@ -130,6 +143,8 @@
                   )
                 </p>
               </li>
+
+              <!-- routes -->
               <li>
                 Create -- routes -- folder in our proj for separating routes
                 from main app.js
@@ -207,6 +222,8 @@
                   </li>
                 </ul>
               </li>
+
+              <!-- controllers -->
               <li style="margin-top: 10px">
                 The next step in making convenient web-server is separating
                 controllers from routes folder by creating controllers folder in
@@ -1459,33 +1476,58 @@
               <li
                 style="margin-top: 10px; background-color: rgb(203, 204, 218)"
               >
-                <div>
-                  <p style="text-align: center; color: rgb(253, 65, 31)">
-                    Authorization 
-                  </p>
-                  <ul>
-                    <li>Use authorization from section <b>"Authorization"</b> in <a  target="_blank" href="./express-mongoDb_registration.html">Add registration, authentication & authorization.</a>
-                    <p>There are two ways of using authorization via passport + passport-jwt, MISS SHORT PART of guide <span style="color:rgb(95, 95, 95)">Automatically "Unauthorized" response & minimum settings in passport.authenticate() method</span></p>
+                <p style="text-align: center; color: rgb(253, 65, 31)">
+                  Authorization
+                </p>
+                <ul>
+                  <li>
+                    Use authorization from section <b>"Authorization"</b> in
+                    <a
+                      target="_blank"
+                      href="./express-mongoDb_registration.html"
+                      >Add registration, authentication & authorization.</a
+                    >
+                    There are two ways of using authorization via passport +
+                    passport-jwt, MISS SHORT PART of guide
+                    <span style="color: rgb(95, 95, 95)"
+                      >Automatically "Unauthorized" response & minimum settings
+                      in passport.authenticate() method</span
+                    >
 
-                              <p style="color: red">
-                        You may miss steps before taking
-                        <a
-                          target="_blank"
-                          href="https://github.com/torkotiuk/be-structure/tree/3_authorization"
-                          ><b>repo (branch "3_authorization")</b></a
-                        >
+                    <div style="margin-top: 10px; color: red">
+                      <span>You may miss steps before by taking</span>
+
+                      <a
+                        target="_blank"
+                        href="https://github.com/torkotiuk/be-structure/tree/3_authorization"
+                        ><b>repo (branch "3_authorization")</b></a
+                      >
+
+                      <span>
                         with all structure, REMEMBER to check .env for existing
                         PORT=, DB_HOST=, SECRET_KEY=, and make in terminal
                         <b>npm i</b>
-                      </p>
-                    </li>
-                  </ul>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
 
-                  
+              <!-- LOGOUT -->
+              <li
+                style="margin-top: 10px; background-color: rgb(218, 255, 159)"
+              >
+                <p style="text-align: center; color: rgb(253, 65, 31)">
+                  LOGOUT
+                </p>
+
+                Use LOGOUT from section <b>"Logout"</b> in
+                <a target="_blank" href="./express-mongoDb_registration.html"
+                  >Add registration, authentication & authorization.</a
+                >
               </li>
             </ol>
           </div>
-              
         </section>
       </main>
 

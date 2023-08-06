@@ -503,185 +503,118 @@
 
           <!-- AUTHORIZATION section -->
           <section class="section authorization">
-            <p style="text-align: center; color: rgb(253, 65, 31)">
-              AUTHORIZATION
-            </p>
-            <p>
-              The whole this page is designed to use token technique for all
-              users routes. So if user want to get some route, we have to verify
-              him (authorize): means to verify token and give information about
-              necessary route without login step.
-            </p>
-            <div>
-              In login step we used jwt.sign() method to generate token, so we
-              also may use jwt.verify() method to this step (authorization)
-              (<span>Example in users/profile route</span> (<a
-                target="_blank"
-                href="./express-mongoDb_registration_jwt-verify__simplest.html"
-                >Authorization simplest - used in every CTRL</a
-              >)), but it is really simplest method one, & in practice often use
-              passport + passport-jwt methods for verifying token.
-            </div>
-            <div>Passport is like a middleman between application and some strategy, in our case is jwt-strategy.</div>
-            <div><a target="_blank" href="./assets/images/authorization/1_main_passport_technique.jpg">Passport schema.</a></div>
-          </section>
-
-          <b>Passport + passport-jwt authorization</b>
-          <ul>
-            <li>npm i passport passport-jwt</li>
-          </ul>
-
-          <ul>
-            <li>
-              <p>
-                We show two ways of using authorization via passport +
-                passport-jwt, for testing them add
+            <div class="container">
+              <p style="text-align: center; color: rgb(253, 65, 31)">
+                AUTHORIZATION
               </p>
+              <p>
+                The whole this page is designed to use token technique for all
+                users routes. So if user want to get some route, we have to
+                verify him (authorize): means to verify token and give
+                information about necessary route without login step.
+              </p>
+              <div>
+                In login step we used jwt.sign() method to generate token, so we
+                also may use jwt.verify() method to this step (authorization)
+                (<span>Example in users/profile route</span> (<a
+                  target="_blank"
+                  href="./express-mongoDb_registration_jwt-verify__simplest.html"
+                  >Authorization simplest - used in every CTRL</a
+                >)), but it is really simplest method one, & in practice often
+                use passport + passport-jwt methods for verifying token.
+              </div>
+              <div>
+                Passport is like a middleman between application and some
+                strategy, in our case is jwt-strategy.
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  href="./assets/images/authorization/1_main_passport_technique.jpg"
+                  >Passport schema.</a
+                >
+              </div>
+
+              <p><b>Passport + passport-jwt authorization</b></p>
+              <ul>
+                <li>npm i passport passport-jwt</li>
+              </ul>
+
               <ul>
                 <li>
-                  <p>controllers\users\getUserProfileCTRL.js</p>
-                  <p
-                    class="codepen"
-                    data-height="400"
-                    data-default-tab="js"
-                    data-slug-hash="QWJomEQ"
-                    data-user="imitator"
-                    style="
-                      height: 300px;
-                      box-sizing: border-box;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      border: 2px solid;
-                      margin: 1em 0;
-                      padding: 1em;
-                    "
-                  >
-                    <span
-                      >See the Pen
-                      <a href="https://codepen.io/imitator/pen/QWJomEQ">
-                        75_getUserProfileCTRL</a
-                      >
-                      by Andrii (<a href="https://codepen.io/imitator"
-                        >@imitator</a
-                      >) on <a href="https://codepen.io">CodePen</a>.</span
-                    >
+                  <p>
+                    We show two ways of using authorization via passport +
+                    passport-jwt, for testing them add
                   </p>
-                  <script
-                    async
-                    src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-                  ></script>
-                </li>
-                <li>
-                  <p>routes\users.routes.js</p>
                   <ul>
                     <li>
-                      <div>
-                        router.get('/profile', ctrl.getUserProfileCTRL);
-                        <p>
-                          P.S. Take care about a place for this route, maybe it
-                          needs to place it before UPDATE, DELETE and getById
-                          routes.
-                        </p>
-                        <p>
-                          To check correct controller work comment the field
-                          "data {}" in answer and make request to
-                          http://localhost:5555/api/v1/users/profile
-                        </p>
-                      </div>
+                      <p>controllers\users\getUserProfileCTRL.js</p>
+                      <p
+                        class="codepen"
+                        data-height="400"
+                        data-default-tab="js"
+                        data-slug-hash="QWJomEQ"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/QWJomEQ">
+                            75_getUserProfileCTRL</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                    </li>
+                    <li>
+                      <p>routes\users.routes.js</p>
+                      <ul>
+                        <li>
+                          <div>
+                            router.get('/profile', ctrl.getUserProfileCTRL);
+                            <p>
+                              P.S. Take care about a place for this route, maybe
+                              it needs to place it before UPDATE, DELETE and
+                              getById routes.
+                            </p>
+                            <p>
+                              To check correct controller work comment the field
+                              "data {}" in answer and make request to
+                              http://localhost:5555/api/v1/users/profile
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </li>
-              </ul>
-            </li>
-            <li>
-              <div>
-                Create passport config in
-                <ul>
-                  <li><p>settings\passport-config.js</p></li>
-                </ul>
-              </div>
-              <p
-                class="codepen"
-                data-height="720"
-                data-default-tab="js"
-                data-slug-hash="dyQrmQO"
-                data-user="imitator"
-                style="
-                  height: 300px;
-                  box-sizing: border-box;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  border: 2px solid;
-                  margin: 1em 0;
-                  padding: 1em;
-                "
-              >
-                <span
-                  >See the Pen
-                  <a href="https://codepen.io/imitator/pen/dyQrmQO"> 76__</a> by
-                  Andrii (<a href="https://codepen.io/imitator">@imitator</a>)
-                  on <a href="https://codepen.io">CodePen</a>.</span
-                >
-              </p>
-              <script
-                async
-                src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-              ></script>
-              <ul>
                 <li>
-                  <p>And import them to app.js</p>
-                  <p>require('./settings/passport-config');</p>
-                </li>
-              </ul>
-            </li>
-          </ul>
-
-          <ol>
-            <li>
-              <p>
-                <b
-                  >Automatically "Unauthorized" response & minimum settings in
-                  <span>passport.authenticate() method</span></b
-                >
-              </p>
-              <ul>
-                <li>
-                  Add directly to users.routes.js middleware
                   <div>
-                    <p>
-                      <div>const passport = require('passport');</div>
-                      router.get('/profile',
-                      <b>passport.authenticate('jwt', { session: false }),</b>
-                      ctrl.getUserProfileCTRL);
-                    </p>
+                    Create passport config in
+                    <ul>
+                      <li><p>settings\passport-config.js</p></li>
+                    </ul>
                   </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                <b
-                  >Write callback for
-                  <span>passport.authenticate() method</span> and write
-                  "Unauthorized" response by hand</b
-                >
-              </p>
-              So in this case all control with request and sending user (add
-              "user" obj to "req" obj)
-
-              <p>req.user = user;</p>
-
-              to a next middleware we should make ourself
-              <ul>
-                <li>
-                  <p>Create middleware in middlewares\authMDW.js</p>
                   <p
                     class="codepen"
-                    data-height="500"
+                    data-height="720"
                     data-default-tab="js"
-                    data-slug-hash="GRwexay"
+                    data-slug-hash="dyQrmQO"
                     data-user="imitator"
                     style="
                       height: 300px;
@@ -696,8 +629,8 @@
                   >
                     <span
                       >See the Pen
-                      <a href="https://codepen.io/imitator/pen/GRwexay">
-                        77__passport.authenticate__middleware</a
+                      <a href="https://codepen.io/imitator/pen/dyQrmQO">
+                        76__</a
                       >
                       by Andrii (<a href="https://codepen.io/imitator"
                         >@imitator</a
@@ -708,33 +641,383 @@
                     async
                     src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                   ></script>
-                </li>
-                <li>
-                  <p>P.S. Reexport in middlewares\index.js</p>
-                  <div style="margin-left: 20px">
-                    const authMDW = require('./authMDW');
-                    <p></p>
-                    <div>module.exports = {</div>
-                    <div style="margin-left: 20px">authMdw,</div>
-                    <div>};</div>
-                  </div>
-                </li>
-                <li>
-                  Use middleware for /profile route in routes\users.routes.js
                   <ul>
-                    <li style="padding: 15px">
-                      <div>const { authMDW } = require('../middlewares');</div>
-                      <div>
-                        router.get('/profile', <b>authMDW,</b>
-                        ctrl.getUserProfileCTRL);
-                      </div>
-                      <p>P.S. Remember to uncomment data {} in getUserProfileCTRL</p>
+                    <li>
+                      <p>And import them to app.js</p>
+                      <p>require('./settings/passport-config');</p>
                     </li>
                   </ul>
                 </li>
               </ul>
-            </li>
-          </ol>
+
+              <ol>
+                <li>
+                  <p>
+                    <b
+                      >Automatically "Unauthorized" response & minimum settings
+                      in <span>passport.authenticate() method</span></b
+                    >
+                  </p>
+                  <ul>
+                    <li>
+                      Add directly to users.routes.js middleware
+                      <div>
+                        <div>
+                          <div>const passport = require('passport');</div>
+                          router.get('/profile',
+                          <b
+                            >passport.authenticate('jwt', { session: false
+                            }),</b
+                          >
+                          ctrl.getUserProfileCTRL);
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>
+                    <b
+                      >Write callback for
+                      <span>passport.authenticate() method</span> and write
+                      "Unauthorized" response by hand</b
+                    >
+                  </p>
+                  So in this case all control with request and sending user (add
+                  "user" obj to "req" obj)
+
+                  <p>req.user = user;</p>
+
+                  to a next middleware we should make ourself
+                  <ul>
+                    <li>
+                      <p>Create middleware in middlewares\authMDW.js</p>
+                      <p
+                        class="codepen"
+                        data-height="500"
+                        data-default-tab="js"
+                        data-slug-hash="GRwexay"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/GRwexay">
+                            77__passport.authenticate__middleware</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                    </li>
+                    <li>
+                      <p>P.S. Reexport in middlewares\index.js</p>
+                      <div style="margin-left: 20px">
+                        const authMDW = require('./authMDW');
+                        <p></p>
+                        <div>module.exports = {</div>
+                        <div style="margin-left: 20px">authMdw,</div>
+                        <div>};</div>
+                      </div>
+                    </li>
+                    <li>
+                      Use middleware for /profile route in
+                      routes\users.routes.js
+                      <ul>
+                        <li style="padding: 15px">
+                          <div>
+                            const { authMDW } = require('../middlewares');
+                          </div>
+                          <div>
+                            router.get('/profile', <b>authMDW,</b>
+                            ctrl.getUserProfileCTRL);
+                          </div>
+                          <p>
+                            P.S. Remember to uncomment data {} in
+                            getUserProfileCTRL
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          </section>
+
+          <!-- LOGOUT section -->
+          <section class="section logout">
+            <div class="container">
+              <p style="text-align: center; color: rgb(253, 65, 31)">LOGOUT</p>
+              <p>
+                Main task in logout technique is deleting token in front- and
+                back-end. F.e. in frontend token was deleted, but if someone
+                copy token from local storage, he may goes to forbidden routes,
+                b/c in backend the token wasn't deleted.
+                <a
+                  target="_blank"
+                  href="./assets/images/logout/Logout_variants.jpg"
+                  >There are some options for a user logout.</a
+                >
+              </p>
+              <p>
+                We show easiest way to delete a token in backend - saving it in
+                db.
+              </p>
+              <ul>
+                <li style="padding-top: 20px">
+                  Add token field to the user schema.
+                  <ul>
+                    <li>
+                      schemas\<b>user.schema.js</b>
+                      <div style="margin-left: 20px">
+                        token: {
+                        <div style="margin-left: 20px">
+                          <div>type: String,</div>
+                          <div>default: null,</div>
+                        </div>
+                        },
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li style="padding-top: 20px">
+                  Create service for user update, f.e. by id.
+                  <ul>
+                    <li>
+                      services\users\<b>updateUserByIdSRV.js</b>
+                      <p
+                        class="codepen"
+                        data-height="240"
+                        data-default-tab="js"
+                        data-slug-hash="xxQBvmL"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/xxQBvmL">
+                            78__logout-step2__updateUserByIdSRV</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                    </li>
+                  </ul>
+                </li>
+                <li style="padding-top: 20px">
+                  Add saving new token in login.
+                  <ul>
+                    <li>
+                      controllers\auth\<b>loginCTRL.js</b>
+                      <div style="color: green">
+                        await service.updateUserByIdSRV(user._id, { token });
+                      </div>
+                      <p
+                        class="codepen"
+                        data-height="300"
+                        data-default-tab="js"
+                        data-slug-hash="dyQrxre"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/dyQrxre">
+                            79__step-3_in-LOGOUT__loginCTRL</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                    </li>
+                  </ul>
+                </li>
+                <li style="padding-top: 20px">
+                  Create controller for logout.
+                  <ul>
+                    <li>
+                      controllers\auth\<b>logoutCTRL.js</b>
+                      <p
+                        class="codepen"
+                        data-height="460"
+                        data-default-tab="js"
+                        data-slug-hash="YzRgmbO"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/YzRgmbO">
+                            80__LOGOUT-STEP-4__logoutCTRL</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                    </li>
+                  </ul>
+                </li>
+                <li style="padding-top: 20px">
+                  Forbid of entering saving routes after logout by changing
+                  authMDV.
+                  <ul>
+                    <li>
+                      middlewares\<b>authMDW.js</b>
+                      <div>
+                        old line
+                        <div style="color: red; margin-left: 30px">
+                          if (error || !user) {
+                        </div>
+                      </div>
+                      <div>
+                        to new line
+                        <div style="color: green; margin-left: 30px">
+                          if (error || !user || <b>!user.token</b>) {
+                        </div>
+                      </div>
+                      <p
+                        class="codepen"
+                        data-height="300"
+                        data-default-tab="js"
+                        data-slug-hash="eYQoOOv"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/eYQoOOv">
+                            81__LOGOUT-STEP-5__</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                    </li>
+                  </ul>
+                </li>
+                <li style="padding-top: 20px">
+                  Add logout route.
+                  <ul>
+                    <li>
+                      routes\<b>auth.routes.js</b>
+                      add lines
+                      <div style="margin-left: 20px; color: green">
+                        <div>
+                          const { authMDW } = require('../middlewares');
+                        </div>
+                        <div>
+                          router.get('/logout', authMDW, ctrl.logoutCTRL);
+                        </div>
+                      </div>
+                      <p
+                        class="codepen"
+                        data-height="300"
+                        data-default-tab="js"
+                        data-slug-hash="BaGEByX"
+                        data-user="imitator"
+                        style="
+                          height: 300px;
+                          box-sizing: border-box;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          border: 2px solid;
+                          margin: 1em 0;
+                          padding: 1em;
+                        "
+                      >
+                        <span
+                          >See the Pen
+                          <a href="https://codepen.io/imitator/pen/BaGEByX">
+                            82__LOGOUT-STEP-6__</a
+                          >
+                          by Andrii (<a href="https://codepen.io/imitator"
+                            >@imitator</a
+                          >) on <a href="https://codepen.io">CodePen</a>.</span
+                        >
+                      </p>
+                      <script
+                        async
+                        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                      ></script>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
       </main>
       <footer><div class="container">Footer</div></footer>
