@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File uploading for routes.</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span
+            ><a href="./express-mongoDb.html"
+              >Back to Express.js + MongoDB &#8678;</a
+            ></span
+          >
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="section">
+            <h1>File uploading for routes.</h1>
+            <p>
+              <a target="_blank" href="./assets/images/multer/multer_schema.jpg"
+                >Some schema of "multer" package using</a
+              >
+            </p>
+            <div>
+              Take simplest backend before a start
+              <p
+                class="codepen"
+                data-height="240"
+                data-default-tab="js"
+                data-slug-hash="mdQZKMj"
+                data-user="imitator"
+                style="
+                  height: 300px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 2px solid;
+                  margin: 1em 0;
+                  padding: 1em;
+                "
+              >
+                <span
+                  >See the Pen
+                  <a href="https://codepen.io/imitator/pen/mdQZKMj">
+                    90__simplestBE</a
+                  >
+                  by Andrii (<a href="https://codepen.io/imitator">@imitator</a
+                  >) on <a href="https://codepen.io">CodePen</a>.</span
+                >
+              </p>
+              <script
+                async
+                src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+              ></script>
+
+              <!--  -->
+              <!--  -->
+            </div>
+          </section>
+
+          <section>
+            <h2 style="text-align: center; font-weight: 400; font-size: 32px">
+              Example when one image
+              <div>may be changed by another</div>
+              <div>(f.e. for avatar)</div>
+            </h2>
+
+            <ol>
+              <li style="margin-top: 20px">
+                Extract file from request (from special field) and put it to the
+                temporary folder
+                <ul>
+                  <li>npm i multer</li>
+                  <li>
+                    Create folder for temporary file "temp"
+                    <div style="margin-left: 20px">
+                      const tempDir = path.join(process.cwd(), 'temp');
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://codepen.io/imitator/pen/qBQzKpP?editors=0010"
+                      >Add multer settings</a
+                    >
+                  </li>
+                  <li>
+                    Create middleware with extracting file from special field
+                    "avatar"
+                    <div style="margin-left: 20px">
+                      const avatarUploadMdw =
+                      uploadImageSettings.single('avatar');
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://codepen.io/imitator/pen/LYXKrme?editors=0010"
+                      >Add POST route for extracting file to temporary folder</a
+                    >
+                  </li>
+                  <li>
+                    Create request in POSTMAN (
+                    <a target="_blank" href="./postman-request.html"
+                      >Look at point in POST requests guide
+                      <b>Request for file sending</b></a
+                    >
+                    )
+                  </li>
+                </ul>
+                <p>Code sum up to step 1</p>
+                <p
+                  class="codepen"
+                  data-height="640"
+                  data-default-tab="js"
+                  data-slug-hash="xxQozyX"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/xxQozyX">
+                      93__sumUpCode__fileUploading_with-multer</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+              <li style="margin-top: 20px">
+                Move file from temporary directory to the "upload" or unlink it
+                (delete file from "temp" in case if file could not be moved to
+                "upload")
+                <ul>
+                  <li>Create "upload" folder</li>
+                  <li>
+                    Create full CTRL
+                    <p
+                      class="codepen"
+                      data-height="1200"
+                      data-default-tab="js"
+                      data-slug-hash="XWyLYLg"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/XWyLYLg">
+                          94__sumUpCode__fileUploading_with-multer_part-1</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </main>
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
