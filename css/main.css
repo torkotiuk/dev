@@ -96,6 +96,14 @@ a:focus {
   background-color: #e6ff8c;
 }
 
+.multer-avatar {
+  background-color: #c8facd;
+}
+
+.multer-image-date {
+  background-color: #ffccf2;
+}
+
 .code {
   color: #fcf979;
   background-color: #2c2c2c;

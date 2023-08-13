@@ -42,7 +42,7 @@
               <ul>
                 <li>Create folder for project</li>
                 <li><b>npm init -y</b></li>
-                <li><b>npm i express cors</b></li>
+                <li><b>npm i express cors multer</b></li>
                 <li><b>npm i nodemon -D</b></li>
                 <li>
                   Add <b>"start:dev": "nodemon app.js"</b> script --- to
@@ -99,9 +99,9 @@
             </div>
           </section>
 
-          <section>
+          <section class="section multer-avatar">
             <h2 style="text-align: center; font-weight: 400; font-size: 32px">
-              Example when one image
+              Example 1. When one image
               <div>may be changed by another</div>
               <div>(f.e. for avatar)</div>
             </h2>
@@ -111,7 +111,7 @@
                 Extract file from request (from special field) and put it to the
                 temporary folder
                 <ul>
-                  <li>npm i multer uuid</li>
+                  <li>npm i uuid</li>
                   <li>
                     Create folder for temporary file "temp"
                     <div style="margin-left: 20px">
@@ -223,6 +223,145 @@
                     ></script>
                   </li>
                 </ul>
+              </li>
+            </ol>
+          </section>
+
+          <section class="section multer-image-date">
+            <h2 style="text-align: center; font-weight: 400; font-size: 32px">
+              Example 2. When images adding
+              <div>to the collection</div>
+              <div>(add time of adding file for the reason of</div>
+              <div>avoiding the same name of files)</div>
+            </h2>
+            <!--  -->
+
+            <ol>
+              <li>
+                <ul>
+                  Extract file from request (from special field) and put it to
+                  the temporary folder
+                  <li>
+                    <p>
+                      In this example we made first part of settings in the file
+                      <b>middlewares\extractFileMDW.js</b>
+                    </p>
+                    <p
+                      class="codepen"
+                      data-height="460"
+                      data-default-tab="js"
+                      data-slug-hash="rNQXOVm"
+                      data-user="imitator"
+                      style="
+                        height: 300px;
+                        box-sizing: border-box;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 2px solid;
+                        margin: 1em 0;
+                        padding: 1em;
+                      "
+                    >
+                      <span
+                        >See the Pen
+                        <a href="https://codepen.io/imitator/pen/rNQXOVm">
+                          100__</a
+                        >
+                        by Andrii (<a href="https://codepen.io/imitator"
+                          >@imitator</a
+                        >) on <a href="https://codepen.io">CodePen</a>.</span
+                      >
+                    </p>
+                    <script
+                      async
+                      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                    ></script>
+                  </li>
+
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://codepen.io/imitator/pen/GRwVpoL?editors=0010"
+                      >Add POST route for extracting file to temporary folder</a
+                    >
+                  </li>
+                  <li>
+                    Create request in POSTMAN (
+                    <a target="_blank" href="./postman-request.html"
+                      >Look at point in POST requests guide
+                      <b>Request for file sending</b></a
+                    >
+                    )
+                  </li>
+                </ul>
+              </li>
+              <li style="margin-top: 20px">
+                Create separate CTRL in
+                <b>controllers\images-collection\addImage.js</b>
+                <p
+                  class="codepen"
+                  data-height="640"
+                  data-default-tab="js"
+                  data-slug-hash="JjegYKv"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/JjegYKv">
+                      102_addImageCTRL_with-adding-date-to-file</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                <p>And use it in <b>app.js</b></p>
+                <p
+                  class="codepen"
+                  data-height="300"
+                  data-default-tab="js"
+                  data-slug-hash="ExOqVgo"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/ExOqVgo">
+                      103__app.js__with-using-of-addImageCTRL</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
               </li>
             </ol>
           </section>
