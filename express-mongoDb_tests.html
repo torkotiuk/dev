@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tests</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span
+            ><a href="./express-mongoDb.html"
+              >Back to Express.js + MongoDB &#8678;</a
+            ></span
+          >
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="section">
+            <h1>Tests</h1>
+            <p>
+              <b>Testing (means that writes programers)</b> in programming means
+              the code that checks our code. Testing program evokes (calls) our
+              main code with many arguments, props etc.
+            </p>
+            <p>
+              Why testing is necessary? In future in changed code we may run
+              tests and check if result will be successful.
+            </p>
+            <p>
+              A good approach to write a code in the step
+              <b
+                >when you start a work is a question about tests (sometimes must
+                to ask)</b
+              >, but remember about time (2 times more) and price (minimus 30%
+              increase).
+            </p>
+            <p>
+              In front-end we may divide 3 types of tests: module (some function
+              or class), integration (between modules) & UI (application test;
+              in fullstack development mostly UI tests name the test of the
+              front-end).
+            </p>
+            <p>
+              <a target="_blank" href="./assets/images/tests/types-of-tests.jpg"
+                >Types and prices increasing schema with tests</a
+              >
+            </p>
+            <p>
+              <a
+                target="_blank"
+                href="./assets/images/tests/Test_approaches.jpg"
+                ><span
+                  >Company divide two options of development with tests: code
+                  first, tests first.</span
+                >
+              </a>
+              <a
+                style="display: block"
+                target="_blank"
+                href="./assets/images/tests/test-first.jpg"
+                >Test first schema.</a
+              >
+            </p>
+
+            <p>
+              <a
+                target="_blank"
+                href="./assets/images/tests/tests-instruments.jpg"
+                >Instruments</a
+              >: <span style="color: rgb(255, 0, 128)">Runner</span> - starts
+              the test; <span style="color: rgb(255, 0, 128)">Reporter</span> -
+              shows the result of tests; <span>Matchers</span> - check what we
+              get after start;
+              <span style="color: rgb(255, 0, 128)">SPY, Mock</span> - transfer
+              some programmed data (mocked means to imitate some data for
+              checking); <span style="color: rgb(255, 0, 128)">Coverage</span> -
+              check if all functions, even lines in some function is working,
+              actually how much percents of a code coverage with tests.
+            </p>
+          </section>
+
+          <section class="section jest-example1">
+            <h2>Jest - example 1</h2>
+
+            <ul>
+              <li>npm i nodemon -D</li>
+              <li>npm i jest</li>
+              <li>
+                add scripts
+                <div>"start:dev": "nodemon app.js",</div>
+                <div>
+                  "test": "jest" - looking for all files with ".test" endings &
+                  run them
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
