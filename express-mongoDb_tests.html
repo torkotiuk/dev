@@ -33,9 +33,9 @@
           <section class="section">
             <h1>Tests</h1>
             <p>
-              <b>Testing (means that writes programers)</b> in programming means
-              the code that checks our code. Testing program evokes (calls) our
-              main code with many arguments, props etc.
+              <b>Testing (that write programers)</b> in programming means the
+              code that checks our code. Testing program evokes (calls) our main
+              code with many arguments, props etc.
             </p>
             <p>
               Why testing is necessary? In future in changed code we may run
@@ -96,7 +96,69 @@
 
           <section class="section jest-example1">
             <h2>Jest - example 1</h2>
+            (Leap year fn()) according to "Test first"
+            <p>
+              <b> Theory about leap year.</b>
+            </p>
+            <span>Leap year - year that has 366 days, or 29 in Feb.</span>
+            <div>
+              Leap year (not really clear for me a, b, c):
+              <div>a) - divisible by 4 without rest</div>
+              <div>b) - doesn't divide by 100 without rest</div>
+              <div>c) - divisible by 400 without rest</div>
+              <div>d) - not less then number 42</div>
+            </div>
 
+            <div>
+              <p><b>Find out all situations with "Leap year":</b></p>
+              <ul>
+                <li><div>2008 - leap, b/c - a)</div></li>
+                <li><div>2003 - isn't leap, b/c - b)</div></li>
+                <li><div>1900 - isn't leap, b/c - c)</div></li>
+                <li><div>2000 - leap, b/c - c)</div></li>
+                <li>
+                  So for integer years atop the FN will be:
+                  <a
+                    target="_blank"
+                    href="https://codepen.io/imitator/pen/NWeWQZj?editors=0010"
+                    >Return "true" if year leap, or "false" if it isn't.</a
+                  >
+                </li>
+                <li>
+                  41 - return "error" - year can't be less than 42
+                  <div>
+                    In this case in the fn we may use simplest if(), but for
+                    whole testing theory and for developers (f.e. if we create a
+                    package we may think about all situations)
+                    <a
+                      target="_blank"
+                      href="https://codepen.io/imitator/pen/NWePKKg?editors=0010"
+                      >it may return "error"</a
+                    >
+                  </div>
+                </li>
+                <li>2004.4 - return "error" - year should be integer number</li>
+                <li>"2008" - return "error" - Argument should be a number</li>
+                <li>true - return "error" - Argument should be a number</li>
+                <li>false - return "error" - Argument should be a number</li>
+                <li>null - return "error" - Argument should be a number</li>
+                <li>[] - return "error" - Argument should be a number</li>
+                <li>{} - return "error" - Argument should be a number</li>
+                <li>
+                  () => return "error" - Argument is not received
+                  <p>
+                    P.S. if fn doesn't get "argument", js in fn transforms it to
+                    "undefined", so if we get undefined return error "Argument
+                    is not received" or "Argument should be a number"
+                  </p>
+                </li>
+                <li>
+                  undefined - return "error" - Argument should be a number
+                </li>
+              </ul>
+            </div>
+
+            <p><b>Create project and tests:</b></p>
             <ul>
               <li>npm i nodemon -D</li>
               <li>npm i jest</li>
@@ -105,10 +167,65 @@
                 <div>"start:dev": "nodemon app.js",</div>
                 <div>
                   "test": "jest" - looking for all files with ".test" endings &
-                  run them
+                  run them (f.e. isLeapYear.<b>test</b>.js )
                 </div>
+                <p>
+                  So. with integer numbers and with number less than 42 test
+                  looks like:
+                </p>
+                <p
+                  class="codepen"
+                  data-height="500"
+                  data-default-tab="js"
+                  data-slug-hash="MWZYgaX"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/MWZYgaX">
+                      112__isLeapYear__Jest-tests_for-Integer</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                <p>
+                  P.S. Error in function and error in tests must be the same -
+                  <b>'A year should be higher than 41'</b>
+                </p>
               </li>
             </ul>
+            <p>
+              <a
+                target="_blank"
+                href="https://codepen.io/imitator/pen/NWePxQj?editors=0010"
+                >Function with all possible arguments,
+              </a>
+              <b>isLeapYear.js</b>
+            </p>
+            <p>
+              <a
+                target="_blank"
+                href="https://codepen.io/imitator/pen/qBLEbew?editors=0010"
+                >TESTS for function above</a
+              >
+              <b>isLeapYear.test.js</b>
+            </p>
           </section>
         </div>
       </main>
