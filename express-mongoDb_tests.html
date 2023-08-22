@@ -227,6 +227,61 @@
               <b>isLeapYear.test.js</b>
             </p>
           </section>
+
+          <section class="section jest-example2">
+            <div class="container">
+              <h2>Jest - example 2</h2>
+              <span>"get /products" Route testing</span>
+
+              <ul>
+                <li>
+                  npm i express jest supertest
+                  <div style="margin-left: 20px">
+                    supertest - SuperAgent driven library for testing HTTP
+                    servers.
+                    <div>Supertest lib imitates http requests.</div>
+                  </div>
+                </li>
+                <li>npm i nodemon -D</li>
+                <li>
+                  add scripts
+                  <div>"start:dev": "nodemon app.js",</div>
+                  <div>"test": "jest"</div>
+                </li>
+                <li>
+                  Create simplest web server in
+                  <a
+                    target="_blank"
+                    href="https://codepen.io/imitator/pen/oNJgmvO?editors=0010"
+                    >app.js</a
+                  >
+                </li>
+                <li>
+                  Create get \products ROUTE in
+                  <a
+                    target="_blank"
+                    href="https://codepen.io/imitator/pen/wvRBNKo?editors=0010"
+                    >routes/products.js</a
+                  >
+                  <div>
+                    -reexport products routes in routes\index.js
+                    <div style="margin-left: 20px">
+                      <div>const productRoutes = require('./products');</div>
+                      <div>module.exports = {productRoutes};</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  Create test products
+                  <a
+                    target="_blank"
+                    href="https://codepen.io/imitator/pen/xxmbMgB?editors=0010"
+                    >routes\products.test.js</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </section>
         </div>
       </main>
       <footer><div class="container">Footer</div></footer>
