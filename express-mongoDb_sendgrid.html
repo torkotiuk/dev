@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sendgrid.</title>
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="container">
+          <span
+            ><a href="./express-mongoDb.html"
+              >Back to Express.js + MongoDB &#8678;</a
+            ></span
+          >
+
+          <a
+            class="github-link"
+            target="_blank"
+            href="https://github.com/torkotiuk/dev"
+          >
+            <svg width="20" height="20">
+              <use href="./assets/images/sprite.svg#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+      </header>
+      <main class="main">
+        <div class="container">
+          <section class="section">
+            <h1>Sendgrid.</h1>
+          </section>
+
+          <section class="section multer-avatar">
+            <h2 style="text-align: center; font-weight: 400; font-size: 32px">
+              Example 1. Send e-mail by sendgrid
+            </h2>
+            <p style="text-align: center">
+              Example without any express/web-server
+            </p>
+
+            <ul>
+              <li>Create project folder to test e-mail sending by sendgrid</li>
+              <li>Add <b>script</b> "start:dev": "nodemon app"</li>
+              <li>npm i @sendgrid/mail dotenv</li>
+              <li>npm i nodemon -D</li>
+              <li>
+                Create in root of the proj
+                <a
+                  target="_blank"
+                  href="https://codepen.io/imitator/pen/Poxeamr?editors=0010"
+                  >.prettierrc.json</a
+                >
+              </li>
+              <li>
+                Add <b>.env</b> file in root of project with necessary
+                <ul>
+                  <li>
+                    SENDGRID_KEY=thisKeyCopiedInTimeOfCreatingItAndSavedSomewhere
+                    <div>
+                      (<a
+                        target="_blank"
+                        href="./mongoDB_createDB_addConnection.html"
+                        >explanation how to take it</a
+                      >)
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Before pushing the initial repository to the github remember
+                about adding <b>.gitignore</b> to the project including in the
+                beginning <b style="color: green">.env</b>
+              </li>
+              <li>
+                <p>app.js</p>
+                <p
+                  class="codepen"
+                  data-height="480"
+                  data-default-tab="js"
+                  data-slug-hash="dywoBWp"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/dywoBWp">
+                      120__send_email_by_SENDGRID</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <footer><div class="container">Footer</div></footer>
+    </div>
+  </body>
+</html>
