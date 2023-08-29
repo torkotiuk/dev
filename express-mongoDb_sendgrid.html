@@ -16,7 +16,6 @@
               >Back to Express.js + MongoDB &#8678;</a
             ></span
           >
-
           <a
             class="github-link"
             target="_blank"
@@ -34,7 +33,7 @@
             <h1>Sendgrid.</h1>
           </section>
 
-          <section class="section multer-avatar">
+          <section class="section sendgrid-example1">
             <h2 style="text-align: center; font-weight: 400; font-size: 32px">
               Example 1. Send e-mail by sendgrid
             </h2>
@@ -108,6 +107,97 @@
                   async
                   src="https://cpwebassets.codepen.io/assets/embed/ei.js"
                 ></script>
+              </li>
+            </ul>
+          </section>
+
+          <section class="section sendgrid-example2">
+            <h2 style="text-align: center; font-weight: 400; font-size: 32px">
+              Example 2. Send e-mail by sendgrid in any CTRL
+            </h2>
+
+            <ul>
+              <li>
+                Create repo according to
+                <a target="_blank" href="./mern-quick-guide__forExperst.html"
+                  >MERN - quick guide</a
+                >
+                till moment of controllers (get, post, update, delete) creating
+                .
+              </li>
+              <li>
+                Add to <b>.env</b>
+                <ul>
+                  <li>SENDGRID_KEY=...</li>
+                  <li>SENDGRID_SENDER=...</li>
+                </ul>
+              </li>
+              <li>
+                Create utils/sendMailBySendgrid.js
+                <p
+                  class="codepen"
+                  data-height="540"
+                  data-default-tab="js"
+                  data-slug-hash="BavKQPa"
+                  data-user="imitator"
+                  style="
+                    height: 300px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px solid;
+                    margin: 1em 0;
+                    padding: 1em;
+                  "
+                >
+                  <span
+                    >See the Pen
+                    <a href="https://codepen.io/imitator/pen/BavKQPa">
+                      121__send_email_by_SENDGRID__function_unified</a
+                    >
+                    by Andrii (<a href="https://codepen.io/imitator"
+                      >@imitator</a
+                    >) on <a href="https://codepen.io">CodePen</a>.</span
+                  >
+                </p>
+                <script
+                  async
+                  src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+                ></script>
+                <div>P.S. remember about reexport in utils/index.js</div>
+              </li>
+              <li>
+                Import this util in any CTRL, f.e. in addProductCTRL
+                <ul>
+                  <li>
+                    const { sendMailBySendgrid } = require('../../utils');
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Send mail like:
+                <ul>
+                  <li>
+                    <div style="background-color: antiquewhite">
+                      const sendMailAnswer = await sendMailBySendgrid({
+                      <div style="margin-left: 20px">
+                        <div>to: 'torkotiuk@gmail.com',</div>
+                        <div>subject: 'Product added',</div>
+                        <div>text: 'Products successfully added',</div>
+                        <div>
+                          html: ' &lt;h2&gt;Product successfully
+                          added&lt;/h2&gt; ',
+                        </div>
+                      </div>
+                      });
+                      <div>
+                        console.log('Message send on:',
+                        sendMailAnswer[0].headers.date);
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </li>
             </ul>
           </section>
