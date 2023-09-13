@@ -222,6 +222,68 @@
               </li>
             </ul>
           </section>
+
+          <section class="section">
+            <h2 style="text-align: center; font-weight: 400; font-size: 32px">
+              Example 4 - "approve email after registration" message and
+              verifyCodeCTRL
+            </h2>
+
+            <ul>
+              <li>
+                Create repo according to
+                <a target="_blank" href="./mern-quick-guide__forExperst.html"
+                  >MERN - quick guide</a
+                >
+                till moment of user REGISTRATION and LOGIN.
+              </li>
+              <li>npm i nodemailer nanoid@3</li>
+              <li>Look up of adding to .env EMAIL_SENDER, EMAIL_EXTAPP_PASS</li>
+              <li>
+                Add two fields to
+                <a
+                  target="_blank"
+                  href="https://codepen.io/imitator/pen/oNJwxNQ?editors=0010"
+                  >models\schemas\user.schema.js</a
+                >
+              </li>
+              <li>
+                In controllers\auth\registerCTRL.js create
+                <a
+                  target="blank"
+                  href="https://codepen.io/imitator/pen/MWZoyNq?editors=0010"
+                  >verifyCode</a
+                >, add to user object and send email with a code link
+              </li>
+              <li>
+                In <b>routes\auth.routes.js</b> create verify route
+
+                <div style="margin-left: 20px">
+                  router.get('/verify/:verifyCode', ctrl.verifyCodeCTRL);
+                </div>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://codepen.io/imitator/pen/abPwZmo?editors=0010"
+                  ><b>controllers\auth\verifyCodeCTRL.js</b></a
+                >
+                <div>
+                  P.S. Remember about
+                  <a
+                    target="_blank"
+                    href="https://codepen.io/imitator/pen/zYMjaqz?editors=0010"
+                    >service.findUser</a
+                  >,
+                  <a
+                    target="_blank"
+                    href="https://codepen.io/imitator/pen/jOXwrGe?editors=0010"
+                    >service.updateUserSRV</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </section>
         </div>
       </main>
       <footer><div class="container">Footer</div></footer>
