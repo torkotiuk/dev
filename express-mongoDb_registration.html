@@ -537,6 +537,15 @@
 
               <p><b>Passport + passport-jwt authorization</b></p>
               <ul>
+                <li>
+                  Check the existing of getUserByIdSRV.js/or create it (<a
+                    target="_blank"
+                    href="https://codepen.io/imitator/pen/oNQqWWm"
+                    >Watch at example with product model</a
+                  >)
+                </li>
+              </ul>
+              <ul>
                 <li>npm i passport passport-jwt</li>
               </ul>
 
@@ -593,8 +602,9 @@
                               getById routes.
                             </p>
                             <p>
-                              To check correct controller work comment the field
-                              "data {}" in answer and make request to
+                              To check correct controller work, in this step,
+                              comment the field "data {}" in answer and make
+                              request to
                               http://localhost:5555/api/v1/users/profile
                             </p>
                           </div>
@@ -730,7 +740,7 @@
                         const authMDW = require('./authMDW');
                         <p></p>
                         <div>module.exports = {</div>
-                        <div style="margin-left: 20px">authMdw,</div>
+                        <div style="margin-left: 20px">authMDW,</div>
                         <div>};</div>
                       </div>
                     </li>
@@ -1015,6 +1025,7 @@
                     </li>
                   </ul>
                 </li>
+                <li>Add token for get request when LOGOUT</li>
               </ul>
             </div>
           </section>

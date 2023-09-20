@@ -587,10 +587,10 @@
                 </ul>
               </li>
 
-              <!-- 14. Refactor getAllProductsCTRL.js -->
+              <!-- 15. Refactor getAllProductsCTRL.js -->
               <li style="margin-top: 10px">
                 Refactor getAllProductsCTRL.js to the new organize folders
-                (means servers)
+                (means services)
 
                 <ul>
                   <li>
@@ -777,6 +777,34 @@
                       </li>
                     </ul>
                   </li>
+                  <li>
+                    P.S. remember about other methods for finding item, like
+                    <div>Product.findOne({ _id: id });</div>
+                    <div>Product.findOne({ email });</div>
+                    <div>
+                      F.e. use service find by any filed
+                      <a
+                        target="_blank"
+                        href="https://github.com/torkotiuk/be-structure/blob/2_register_login/services/users/findUserSRV.js"
+                        >findUserSRV</a
+                      >
+                      <div style="margin-left: 20px">
+                        <b>User.findOne(filter);</b>
+                      </div>
+                      <div>
+                        in
+                        <a
+                          target="_blank"
+                          href="https://github.com/torkotiuk/be-structure/blob/2_register_login/controllers/auth/loginCTRL.js"
+                          >loginCTRL</a
+                        >. So we find user by e-mail filed like
+                      </div>
+                      <div style="margin-left: 20px">
+                        const user = await service.findUser({ email:
+                        req.body.email });
+                      </div>
+                    </div>
+                  </li>
                 </ul>
               </li>
 
@@ -795,7 +823,8 @@
                   <li>
                     Create
                     <b
-                      >services/products/updateProduct<span style="color: red"
+                      >services/products/updateProductById<span
+                        style="color: red"
                         >SRV</span
                       >.js</b
                     >
@@ -834,7 +863,8 @@
                   <li>
                     Create
                     <b
-                      >updateProduct<span style="color: green">CTRL</span>.js</b
+                      >updateProductById<span style="color: green">CTRL</span
+                      >.js</b
                     >
                     <p
                       class="codepen"
@@ -874,7 +904,7 @@
                       <li>
                         routes\products.routes.js
                         <div>
-                          <b>router.put('/:id', ctrl.updateProductCTRL);</b>
+                          <b>router.put('/:id', ctrl.updateProductByIdCTRL);</b>
                         </div>
                       </li>
                     </ul>
