@@ -1580,6 +1580,81 @@
                 <p style="text-align: center; color: rgb(253, 65, 31)">
                   Add AVATAR for user
                 </p>
+                <ol>
+                  <li>
+                    Extract file from request (from special field) and put it to
+                    the temporary folder
+                    <ul>
+                      <li>
+                        Create temp dir
+                        <ul>
+                          <li>Create temp dir in project</li>
+                          <li>
+                            Add code
+                            <div>const path = require('path');</div>
+                            <div>
+                              const tempDir = path.join(process.cwd(), 'temp');
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>npm i multer</li>
+                      <li>
+                        <a
+                          target="_blank"
+                          href="https://codepen.io/imitator/pen/qBQzKpP?editors=0010"
+                          >Add multer settings</a
+                        >
+                      </li>
+                      <li>
+                        Create middleware with extracting file from special
+                        field "avatar"
+                        <div style="margin-left: 20px">
+                          const avatarUploadMdw =
+                          uploadImageSettings.single('avatar');
+                        </div>
+                      </li>
+                      <li>
+                        <a
+                          target="_blank"
+                          href="https://codepen.io/imitator/pen/LYXKrme?editors=0010"
+                          >Add POST route for extracting file to temporary
+                          folder</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          target="_blank"
+                          href="https://codepen.io/imitator/pen/xxQozyX"
+                          >Sum up code</a
+                        >
+                      </li>
+                      <li>
+                        Create request in POSTMAN (
+                        <a target="_blank" href="./postman-request.html"
+                          >Look at point in POST requests guide
+                          <b>Request for file sending</b></a
+                        >
+                        )
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Move file from temporary directory to the "upload" or unlink
+                    it (delete file from "temp" in case if file could not be
+                    moved to "upload")
+                    <ul>
+                      <li>Create "upload" folder</li>
+                      <li>
+                        <a
+                          target="_blank"
+                          href="https://codepen.io/imitator/pen/XWyLYLg"
+                          >Create full "CTRL"</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
               </li>
 
               <!-- Add site hero gallery -->

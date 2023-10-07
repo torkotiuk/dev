@@ -68,18 +68,39 @@
                 </p>
               </li>
               <li>
-                Request for file sending
+                A) Request for file sending (ONLY FILE)
                 <ul>
                   <li>Create POST request to "http://localhost:5555/file"</li>
                   <li>Go to <b>"body"</b> tab</li>
                   <li>Choose <b>"form-data"</b></li>
                   <li>
                     In <b>key</b> filed add special filed
-                    <span style="color: green"> > avatar ></avatar></span> & in the
-                    same filed on right side choose from dropdown menu 
+                    <span style="color: green"> > avatar ></span> &
+                    <b style="color: red">in the same filed</b> on right side
+                    choose from dropdown menu
                     <span style="color: green"> > file ></span>
                   </li>
                   <li>In <b>Value</b> filed take an image file</li>
+                </ul>
+
+                B) Request for file sending (FILE + application/json)
+                <ul>
+                  <li>Add file like in A)</li>
+                  <li>
+                    <a
+                      target="_"
+                      href="./assets/images/postman/Postman__Content-type.jpg"
+                      >Set request field "Content-Type" possibility</a
+                    >
+                  </li>
+                  <li>Type in "Content Type" filed application/json</li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://www.youtube.com/watch?v=1yqNfqfZPB8"
+                      >P.S. learn more from video</a
+                    >
+                  </li>
                 </ul>
               </li>
             </ol>
