@@ -1585,59 +1585,44 @@
                     Extract file from request (from special field) and put it to
                     the temporary folder
                     <ul>
-                      <li>
-                        Create temp dir
-                        <ul>
-                          <li>Create temp dir in project</li>
-                          <li>
-                            Add code
-                            <div>const path = require('path');</div>
-                            <div>
-                              const tempDir = path.join(process.cwd(), 'temp');
-                            </div>
-                          </li>
-                        </ul>
-                      </li>
+                      <li>Create temp dir</li>
                       <li>npm i multer</li>
                       <li>
+                        Create
                         <a
                           target="_blank"
-                          href="https://codepen.io/imitator/pen/qBQzKpP?editors=0010"
-                          >Add multer settings</a
+                          href="https://codepen.io/imitator/pen/yLGrapX?editors=0010"
+                          >middlewares/extractAvatarMDW.js</a
                         >
                       </li>
                       <li>
-                        Create middleware with extracting file from special
-                        field "avatar"
-                        <div style="margin-left: 20px">
-                          const avatarUploadMdw =
-                          uploadImageSettings.single('avatar');
+                        Use middleware in /register route
+                        <div>
+                          <span style="color: grey"
+                            >const { authMDW,const { authMDW,</span
+                          >
+                          <b>extractAvatarMDW</b>
+
+                          <span style="color: grey"
+                            >} = require('../middlewares');</span
+                          >
                         </div>
-                      </li>
-                      <li>
-                        <a
-                          target="_blank"
-                          href="https://codepen.io/imitator/pen/LYXKrme?editors=0010"
-                          >Add POST route for extracting file to temporary
-                          folder</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          target="_blank"
-                          href="https://codepen.io/imitator/pen/xxQozyX"
-                          >Sum up code</a
-                        >
+
+                        <div>
+                          router.post('/register', extractAvatarMDW,
+                          ctrl.registerCTRL);
+                        </div>
                       </li>
                       <li>
                         Create request in POSTMAN (
                         <a target="_blank" href="./postman-request.html"
                           >Look at point in POST requests guide
-                          <b>Request for file sending</b></a
+                          <b>Request for file sending > B)</b></a
                         >
                         )
                       </li>
                     </ul>
+                    So, in this step a file will be uploaded to "temp" folder
                   </li>
                   <li>
                     Move file from temporary directory to the "upload" or unlink
